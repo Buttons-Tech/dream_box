@@ -5,7 +5,7 @@ import CTA_button2 from './CTA_button2'
 const Middle_CTA = () => {
   return (
     <>
-    <div className="flex flex-col items-center gap-8 mt-20 mb-20">
+    <div className="flex flex-col items-center gap-8 mt-50 mb-20">
       <span className="text-[36px] w-full max-w-[329px] flex text-center font-bold">
         Ready to Give Your Child a Head Start?
       </span>
