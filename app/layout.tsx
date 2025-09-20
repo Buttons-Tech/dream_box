@@ -31,7 +31,7 @@ export default function RootLayout({
     // which fixes the dark mode issue you experienced on mobile.
     // The font variables are applied to the entire body here.
     <html lang="en" className="light">
-      <body className={`${outfit.variable} ${inter.variable}`}>
+      <body className={`${outfit.variable} ${inter.variable} font-inter`}>
         {children}
       </body>
     </html>

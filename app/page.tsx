@@ -4,12 +4,15 @@ import Footer from "./Components/Footer";
 import Middle_CTA from "./Components/Middle_CTA";
 import Testimonials from "./Components/Testimonials";
 import Howitwork from "./Components/Howitwork";
+import Programs from "./Components/Programs";
 
 export default function Home() {
   return (
         <>
         <Nav_bar/>
         <Hero/>
+        <Programs />
+
 
         {/* <Howitwork /> */}
         <Testimonials />

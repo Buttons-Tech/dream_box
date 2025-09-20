@@ -5,11 +5,14 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  // This is the key change. We are setting Tailwind's dark mode
-  // to be based on a CSS class, not the user's system preferences.
   darkMode: 'class',
   theme: {
     extend: {
+      // This is the new section that defines your custom fonts
+      fontFamily: {
+        outfit: ['var(--font-outfit)'],
+        inter: ['var(--font-inter)'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
