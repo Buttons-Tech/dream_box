@@ -24,7 +24,8 @@ const Footer = () => {
             <Image src="/img/instagram.png" alt='logo' height={50} width={50} className='w-[24px] h-[24px]' />
             <Image src="/img/twitter.png" alt='logo' height={50} width={50} className='w-[24px] h-[24px]' />
             <Image src="/img/tiktok.png" alt='logo' height={50} width={50} className='w-[24px] h-[24px]' />
-            <IoLogoWhatsapp  height={50} width={50} className='w-[24px] h-[24px]'/>
+            {/* <IoLogoWhatsapp  height={50} width={50} className='w-[24px] h-[24px]'/> */}
+            <Image src="/img/whatsapp.png" alt='logo' height={50} width={50} className='w-[24px] h-[24px]' />
             </div>
             <div className='text-[10px] flex flex-col '>
                 <a href="Buttonsafrotech@gmai.com"><span>dreamboxtechacademy@gmail.com | 09066596603</span></a>
