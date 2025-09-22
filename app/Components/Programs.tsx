@@ -1,6 +1,25 @@
 import React from 'react'
 
 const Programs = () => {
+
+const program_data = [
+    {
+        title: "Coding for Kids",
+        description: "Build the Future. Our coding classes teach logic, problem-solving, and the foundations of software creation through fun, project-based learning.",
+        image: "/img/coding.png"
+    },
+     {
+        title: "Robotics for Kids",
+        description: "Bring Ideas to Life. Students learn to build, program, and command real robots, developing critical thinking and engineering skills.",
+        image: "/img/robotics.png"
+    },
+     {
+        title: "Creativity & Design for Kids",
+        description: "Create with a Purpose. From digital art to app design, we empower students to express their creativity and shape their digital world.",
+        image: "/img/design.png"
+    }
+]
+
   return (
    <>
     <div className='w-[393px] h-[237px] m-auto px-[25px] text-center py-[17px]  bg-[#FFDBF4]'>
@@ -9,7 +28,7 @@ const Programs = () => {
     </div>
     <div className='flex items-center justify-center text-center'>
 
-    <span className='text-[36px] font-bold py-[24px] text-[#A40C76]'>Spark Creativity with Our Core Programs</span>
+    <span className='text-[36px] font-bold py-[24px] text-[#A40C76]'>Spark Creativity with OurPrograms</span>
     </div>
    </>
   )
