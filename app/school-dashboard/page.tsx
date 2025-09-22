@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 import React, { useState } from "react";
 
 const clubs = [
@@ -106,6 +107,9 @@ export default function SchoolDashboard() {
                     </div>
                 </div>
             </div>
+            <Link href="/" className='text-[20px] text-[#A40C76] underline flex justify-center mb-8'>
+                  <span className=''>return to home</span>
+                  </Link>
         </div>
     );
 }

@@ -24,6 +24,7 @@ Coding, Robotics, and Design for the Next Generation of Innovators.</span><br />
         
         <Image src="/img/hero_img.jpg" alt="Hero Image" width={375} height={300} className='mx-auto mt-8' />
       </div>
+
     </>
   )
 }
