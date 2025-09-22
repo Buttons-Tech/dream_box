@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import React from 'react'
-<<<<<<< HEAD
-// import { IoLogoWhatsapp } from "react-icons/io5";
-=======
->>>>>>> 165c5134b1cdadcd256fbebe44477a254b2f85c9
+// <<<<<<< HEAD
+
+// =======
+// >>>>>>> 165c5134b1cdadcd256fbebe44477a254b2f85c9
 
 const Footer = () => {
   return (
@@ -27,7 +27,6 @@ const Footer = () => {
             <a href="https://www.instagram.com/dreamboxacademy?igsh=bnRxeDYwdDJndncy&utm_source=qr"><Image src="/img/instagram.png" alt='logo' height={50} width={50} className='w-[24px] h-[24px]' /></a>
             <a href="https://x.com/dreamboxacademy?s=21"><Image src="/img/twitter.png" alt='logo' height={50} width={50} className='w-[24px] h-[24px]' /></a>
             <a href="https://www.tiktok.com/@dreamboxacademy?_t=ZS-8zvA3zz6OBt&_r=1"><Image src="/img/tiktok.png" alt='logo' height={50} width={50} className='w-[24px] h-[24px]' /></a>
-            {/* <IoLogoWhatsapp  height={50} width={50} className='w-[24px] h-[24px]'/> */}
             <a href="wa.me/2349011822117"><Image src="/img/whatsapp.png" alt='logo' height={50} width={50} className='w-[24px] h-[24px]' /></a>
             </div>
             <div className='text-[10px] flex flex-col '>
