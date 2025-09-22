@@ -28,7 +28,32 @@ const program_data = [
     </div>
     <div className='flex items-center justify-center text-center'>
 
-    <span className='text-[36px] font-bold py-[24px] text-[#A40C76]'>Spark Creativity with OurPrograms</span>
+    <span className='text-[36px] font-bold py-[24px] text-[#A40C76]'>Spark Creativity with Our Programs</span>
+    </div>
+    <div className='max-w-[1200px] m-auto '>
+        {program_data.map((program, index) => (
+            <div
+                key={index}
+                className={`
+                    flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}
+                    items-center justify-center my-[24px] md:my-[40px] px-[51px] md:px-[20px] 
+                `}
+            >
+                <img
+                    src={program.image}
+                    alt={program.title}
+                    className="w-[277px] md:w-[300px] md:h-[300px] object-contain mb-[16px] md:mb-0"
+                />
+                <div className="max-w-full md:max-w-[400px] mx-0 md:mx-[20px] text-center md:text-left">
+                    <h2 className="text-[22px] md:text-[28px] font-bold mb-[8px] md:mb-[10px] text-[#A40C76]">
+                        {program.title}
+                    </h2>
+                    <p className="text-[16px] md:text-[16px]  px-[51px] md:px-0 ">
+                        {program.description}
+                    </p>
+                </div>
+            </div>
+        ))}
     </div>
    </>
   )
