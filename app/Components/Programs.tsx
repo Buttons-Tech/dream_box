@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const Programs = () => {
@@ -39,9 +40,10 @@ const program_data = [
                     items-center justify-center my-[24px] md:my-[40px] px-[51px] md:px-[20px] 
                 `}
             >
-                <img
+                <Image
                     src={program.image}
                     alt={program.title}
+                    
                     className="w-[277px] md:w-[300px] md:h-[300px] object-contain mb-[16px] md:mb-0"
                 />
                 <div className="max-w-full md:max-w-[400px] mx-0 md:mx-[20px] text-center md:text-left">
