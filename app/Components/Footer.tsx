@@ -1,6 +1,9 @@
 import Image from 'next/image'
 import React from 'react'
+<<<<<<< HEAD
 // import { IoLogoWhatsapp } from "react-icons/io5";
+=======
+>>>>>>> 165c5134b1cdadcd256fbebe44477a254b2f85c9
 
 const Footer = () => {
   return (

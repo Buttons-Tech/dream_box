@@ -25,7 +25,7 @@ const Testimonials = () => {
         <div className='flex flex-col items-start text-left mt-2 gap-1'>
 
           <span className='font-bold text-[14px]'>Head of Academics</span>
-          <span className='font-bold text-[#8D8C8C] text-[14px]'>XYZ School, Ikeja</span>
+          <span className='font-bold text-[#8D8C8C] text-[14px]'>Pampers School, Mainland</span>
         </div>
       </div>
     </div>
