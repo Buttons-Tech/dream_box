@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import { IoLogoWhatsapp } from "react-icons/io5";
 
 const Footer = () => {
   return (
@@ -19,13 +20,15 @@ const Footer = () => {
             </div>
             <div className='flex gap-4 md:gap-8'>
                 
-            <Image src="/img/linkedin.png" alt='logo' height={50} width={50} className='w-[24px] h-[24px]' />
+           <a href="https://www.npmjs.com/package/react-icons"><Image src="/img/linkedin.png" alt='logo' height={50} width={50} className='w-[24px] h-[24px]' /> </a> 
             <Image src="/img/instagram.png" alt='logo' height={50} width={50} className='w-[24px] h-[24px]' />
             <Image src="/img/twitter.png" alt='logo' height={50} width={50} className='w-[24px] h-[24px]' />
             <Image src="/img/tiktok.png" alt='logo' height={50} width={50} className='w-[24px] h-[24px]' />
+            {/* <IoLogoWhatsapp  height={50} width={50} className='w-[24px] h-[24px]'/> */}
+            <Image src="/img/whatsapp.png" alt='logo' height={50} width={50} className='w-[24px] h-[24px]' />
             </div>
             <div className='text-[10px] flex flex-col '>
-                <span>dreamboxtechacademy@gmail.com | 09066596603</span>
+                <a href="Buttonsafrotech@gmai.com"><span>dreamboxtechacademy@gmail.com | 09066596603</span></a>
                 <span>@2025 Powered by buttons. All Rights Reserved</span>
             </div>
     </footer>
