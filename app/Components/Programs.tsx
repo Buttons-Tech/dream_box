@@ -24,7 +24,7 @@ const program_data = [
   return (
    <>
     <div className='w-[393px] h-[237px] m-auto px-[25px] text-center py-[17px]  bg-[#FFDBF4]'>
-        <span className='text-[36px] font-bold'>Is Your Child Ready for the Future?</span><br />
+        <span className='text-[36px] font-bold'>Is  <span className='text-[#A40C76]'>Your Child</span> Ready for the Future?</span><br />
         <span className='text-[16px] '> At Dreambox, we transform screen time into smart time, turning curiosity into valuable skills. We make learning code, robotics, and design an exciting adventure.</span>
     </div>
     <div className='flex items-center justify-center text-center'>
@@ -43,14 +43,15 @@ const program_data = [
                 <Image
                     src={program.image}
                     alt={program.title}
-                    
+                    width={300}
+                    height={200}
                     className="w-[277px] md:w-[300px] md:h-[300px] object-contain mb-[16px] md:mb-0"
                 />
                 <div className="max-w-full md:max-w-[400px] mx-0 md:mx-[20px] text-center md:text-left">
                     <h2 className="text-[22px] md:text-[28px] font-bold mb-[8px] md:mb-[10px] text-[#A40C76]">
                         {program.title}
                     </h2>
-                    <p className="text-[16px] md:text-[16px]  px-[51px] md:px-0 ">
+                    <p className="text-[16px] md:text-[16px]   md:px-0 ">
                         {program.description}
                     </p>
                 </div>
