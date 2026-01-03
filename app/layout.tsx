@@ -1,14 +1,14 @@
 import './globals.css';
-import { Outfit, Inter } from 'next/font/google';
+import { Inter } from 'next/font/google';
 
 // Define the fonts and load them.
 // We are using `variable` to assign a CSS variable name for each font,
 // which makes them easy to use with Tailwind CSS in your components.
-const outfit = Outfit({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-outfit'
-});
+// const outfit = Outfit({
+//   subsets: ['latin'],
+//   display: 'swap',
+//   variable: '--font-outfit'
+// });
 
 const inter = Inter({
   subsets: ['latin'],
@@ -31,7 +31,7 @@ export default function RootLayout({
     // which fixes the dark mode issue you experienced on mobile.
     // The font variables are applied to the entire body here.
     <html lang="en" className="light">
-      <body className={`${outfit.variable} ${inter.variable} font-inter`}>
+      <body className={`${inter.variable} font-inter`}>
         {children}
       </body>
     </html>
