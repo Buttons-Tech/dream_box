@@ -3,7 +3,7 @@ import React from 'react';
 import { 
   Code, 
   Cpu, 
-  Baby, 
+   
   Calculator, 
   Users, 
   Heart,

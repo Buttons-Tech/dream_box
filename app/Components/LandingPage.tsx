@@ -1,4 +1,6 @@
 "use client";
+
+import Image from 'next/image';
 import React from "react";
 import {
   Code,
@@ -112,11 +114,13 @@ const LandingPage: React.FC = () => {
         <div className="relative">
           <div className="absolute -top-10 -left-10 w-64 h-64 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
           <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-pink-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
-          <img
-            src="https://illustrations.popsy.co/white/student-going-to-school.svg"
-            alt="Hero Illustration"
-            className="relative z-10 w-full"
-          />
+         <Image 
+    src="https://illustrations.popsy.co/white/student-going-to-school.svg" 
+    alt="Dreambox Student" 
+    fill
+    className="relative z-10 object-contain"
+    priority 
+  />
         </div>
       </section>
 
@@ -188,11 +192,14 @@ const LandingPage: React.FC = () => {
             </button>
           </div>
           <div className="md:w-1/2 relative">
-            <img
-              src="/img/Special-Needs.jpg"
-              alt="Inclusion Illustration"
-              className="w-full h-auto max-w-md mx-auto"
-            />
+            
+               <Image 
+                         src="/img/Special-Needs.jpg"
+                         alt="Inclusion Illustration"
+                         fill
+                        
+                         className="w-full h-auto max-w-md mx-auto"
+                       />
           </div>
         </div>
       </section>

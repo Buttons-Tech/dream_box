@@ -17,7 +17,7 @@ export default function Home() {
         <Programs />
 
 
-        <Howitwork />
+        
         <Testimonials />
         <Middle_CTA />
         <Footer /> */}

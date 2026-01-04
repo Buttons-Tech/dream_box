@@ -35,8 +35,8 @@ const TutorSignup: React.FC = () => {
           <div>
             <h2 className="text-3xl font-black mb-4">Join our Global Faculty.</h2>
             <p className="text-purple-100 text-sm leading-relaxed opacity-80">
-              Impact students across 4 continents. We're looking for passionate experts in Tech, Academics, and Special Education.
-            </p>
+{`              Impact students across 4 continents. We're looking for passionate experts in Tech, Academics, and Special Education.
+`}            </p>
           </div>
           
           <div className="space-y-4">

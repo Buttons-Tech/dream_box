@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image';
 import { 
   LayoutDashboard, User, Users, GraduationCap, 
   BookOpen, MessageSquare, Settings, HelpCircle, 
@@ -99,8 +100,13 @@ const DreamboxDashboard: React.FC = () => {
                 <p className="font-bold text-sm">Mercy John</p>
                 <p className="text-xs text-gray-400 font-medium">Admin User</p>
               </div>
-              <img src="https://i.pravatar.cc/150?u=mercy" alt="Admin Profile" className="w-10 h-10 rounded-full border-2 border-[#6347D1]" />
-            </div>
+<Image 
+    src="https://i.pravatar.cc/150?u=mercy" 
+    alt="Admin Profile" 
+    width={40} 
+    height={40} 
+    className="rounded-full border-2 border-[#6347D1]"
+  />            </div>
           </div>
         </header>
 
@@ -118,11 +124,13 @@ const DreamboxDashboard: React.FC = () => {
                   Learn More
                 </button>
               </div>
-              <img 
-                src="https://illustrations.popsy.co/white/remote-work.svg" 
-                alt="Banner Illustration" 
-                className="w-48 h-48 hidden md:block"
-              />
+             <Image 
+    src="https://illustrations.popsy.co/white/customer-support.svg" 
+    alt="Dreambox Support" 
+    fill
+    className="object-contain"
+    priority // Loads this image faster as it's above the fold
+  />
             </div>
 
             {/* Stats Grid */}
@@ -158,8 +166,13 @@ const DreamboxDashboard: React.FC = () => {
                         className={`transition-all duration-200 ${index === 1 ? 'bg-[#6347D1] text-white rounded-2xl shadow-xl' : 'hover:bg-slate-50'}`}
                       >
                         <td className="py-4 pl-3 rounded-l-2xl">
-                          <div className="flex items-center gap-3">
-                            <img src={student.avatar} className="w-8 h-8 rounded-lg object-cover" alt={student.name} />
+                          <div className="flex items-center gap-3 relative w-8 h-8 flex-shrink-0">
+                            <Image 
+             src={student.avatar} 
+             alt={student.name} 
+             fill
+             className="rounded-lg object-cover"
+           />
                             <span className="font-bold">{student.name}</span>
                           </div>
                         </td>
@@ -220,12 +233,14 @@ const DreamboxDashboard: React.FC = () => {
                   <p className="text-[10px] text-gray-400 font-bold uppercase mb-3">Teacher List</p>
                   <div className="flex -space-x-3">
                     {[1, 2, 3, 4, 5].map((i) => (
-                      <img 
-                        key={i} 
-                        src={`https://i.pravatar.cc/150?u=teacher${i}`} 
-                        className="w-10 h-10 rounded-full border-4 border-white shadow-sm object-cover ring-1 ring-gray-50" 
-                        alt="Teacher" 
-                      />
+                      
+                      <Image 
+             src={`https://i.pravatar.cc/150?u=teacher${i}`} 
+             alt="Teacher" 
+             fill
+             key={i} 
+             className="rounded-lg object-cover"
+           />
                     ))}
                     <div className="w-10 h-10 rounded-full border-4 border-white bg-gray-100 flex items-center justify-center text-gray-400 cursor-pointer hover:bg-gray-200 transition-colors">
                       <span className="text-xs font-bold">+</span>

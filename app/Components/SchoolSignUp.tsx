@@ -28,8 +28,8 @@ const SchoolSignup: React.FC = () => {
           </div>
           <h2 className="text-3xl font-black text-slate-900 mb-4">Application Sent!</h2>
           <p className="text-gray-500 mb-8 leading-relaxed">
-            Thank you for choosing Dreambox. Our partnership team will review your school's details and contact you within 48 hours.
-          </p>
+{`            Thank you for choosing Dreambox. Our partnership team will review your school's details and contact you within 48 hours.
+`}          </p>
           <Link href="/" className="w-full">
           <button className="w-full bg-[#6347D1] text-white py-4 rounded-2xl font-bold shadow-lg shadow-indigo-100">
             Return to Home
