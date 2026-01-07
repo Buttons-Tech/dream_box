@@ -1,6 +1,6 @@
 "use client";
 
-import Image from 'next/image';
+import Image from "next/image";
 import React from "react";
 import {
   Code,
@@ -96,31 +96,36 @@ const LandingPage: React.FC = () => {
             bigger.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            
-            <Link  href="/get-started" className="w-full flex flex-col sm:flex-row gap-4" >
-            <button className="bg-[#FE9B4B] text-white px-10 py-4 rounded-2xl font-bold shadow-lg shadow-orange-100 hover:bg-orange-500 transition-all flex items-center justify-center gap-2">
-              Get Started <ChevronRight size={18} />
-            </button>
+            <Link
+              href="/get-started"
+              className="w-full flex flex-col sm:flex-row gap-4"
+            >
+              <button className="bg-[#FE9B4B] text-white px-10 py-4 rounded-2xl font-bold shadow-lg shadow-orange-100 hover:bg-orange-500 transition-all flex items-center justify-center gap-2">
+                Get Started <ChevronRight size={18} />
+              </button>
             </Link>
 
-            <Link  href="/get-started" className="w-full flex flex-col sm:flex-row gap-4" >
-            <button className="bg-white text-slate-700 px-10 py-4 rounded-2xl font-bold shadow-sm border border-gray-100 hover:bg-gray-50 transition-all">
-              View Curriculum
-            </button>
+            <Link
+              href="/get-started"
+              className="w-full flex flex-col sm:flex-row gap-4"
+            >
+              <button className="bg-white text-slate-700 px-10 py-4 rounded-2xl font-bold shadow-sm border border-gray-100 hover:bg-gray-50 transition-all">
+                View Curriculum
+              </button>
             </Link>
-
           </div>
         </div>
         <div className="relative">
           <div className="absolute -top-10 -left-10 w-64 h-64 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
           <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-pink-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
-         <Image 
-    src="https://illustrations.popsy.co/white/student-going-to-school.svg" 
-    alt="Dreambox Student" 
-    fill
-    className="relative z-10 object-contain"
-    priority 
-  />
+          <Image
+            src="/img/afrii.jpg"
+            alt="Dreambox Student"
+            width={500}
+            height={500}
+            className="relative z-10 object-contain"
+            priority
+          />
         </div>
       </section>
 
@@ -188,18 +193,17 @@ const LandingPage: React.FC = () => {
               progress.
             </p>
             <button className="bg-white text-[#6347D1] px-8 py-4 rounded-2xl font-bold hover:bg-gray-100 transition-all">
-              Talk to a Specialist
+              Talk to a Specialist 
             </button>
           </div>
           <div className="md:w-1/2 relative">
-            
-               <Image 
-                         src="/img/Special-Needs.jpg"
-                         alt="Inclusion Illustration"
-                         fill
-                        
-                         className="w-full h-auto max-w-md mx-auto"
-                       />
+            <Image
+              src="/img/Special-Needs.jpg"
+              alt="Inclusion Illustration"
+              width={500}
+              height={500}
+              className="w-full h-auto max-w-md mx-auto"
+            />
           </div>
         </div>
       </section>
