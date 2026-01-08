@@ -12,8 +12,21 @@ import {
   CheckCircle,
   Globe
 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+
 
 const TutorSignup: React.FC = () => {
+
+  const [formData, setFormData] = useState({
+  firstName: '',
+  lastName: '',
+  email: '',
+  country: '',
+  experience: ''
+});
+const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+};
   const [step, setStep] = useState(1);
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
 
@@ -23,8 +36,35 @@ const TutorSignup: React.FC = () => {
     );
   };
 
+
   const nextStep = () => setStep(s => s + 1);
   const prevStep = () => setStep(s => s - 1);
+
+  const router = useRouter();
+
+  const handleSubmit = async () => {
+  // Combine the text inputs with the selected skills array
+  const finalData = {
+    ...formData,
+    expertise: selectedSkills, // This is the state we created in the previous step
+  };
+
+  try {
+    const response = await fetch('/api/tutors', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(finalData),
+    });
+
+    if (response.ok) {
+      // alert("Application Successful!");
+      // You can use router.push('/success') here
+      router.push('/signup/success');
+    }
+  } catch (error) {
+    console.error("Error submitting form", error);
+  }
+};
 
   return (
     <div className="min-h-screen bg-[#F8F7FF] flex items-center justify-center p-6">
@@ -124,7 +164,7 @@ const TutorSignup: React.FC = () => {
               </button>
             )}
             <button 
-              onClick={step === 3 ? () => alert('Submitted!') : nextStep}
+              onClick={step === 3 ? handleSubmit : nextStep}
               className="flex-1 bg-[#6347D1] text-white py-4 rounded-2xl font-bold shadow-lg shadow-indigo-100 flex items-center justify-center gap-2 ml-auto"
             >
               {step === 3 ? 'Complete Application' : 'Next Step'} <ChevronRight size={16} />

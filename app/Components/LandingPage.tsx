@@ -15,6 +15,8 @@ import {
   X,
 } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
+
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -42,6 +44,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 
 const LandingPage: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const router = useRouter();
 
   return (
     <div className="min-h-screen bg-[#F8F7FF] font-sans selection:bg-purple-200">
@@ -96,23 +99,23 @@ const LandingPage: React.FC = () => {
             bigger.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/get-started"
+            <div
+              
               className="w-full flex flex-col sm:flex-row gap-4"
             >
-              <button className="bg-[#FE9B4B] text-white px-10 py-4 rounded-2xl font-bold shadow-lg shadow-orange-100 hover:bg-orange-500 transition-all flex items-center justify-center gap-2">
+              <button className="bg-[#FE9B4B] text-white px-10 py-4 rounded-2xl font-bold shadow-lg shadow-orange-100 hover:bg-orange-500 transition-all flex items-center justify-center gap-2" onClick={() => router.push('/get-started')}>
                 Get Started <ChevronRight size={18} />
               </button>
-            </Link>
+            </div>
 
-            <Link
-              href="/get-started"
+            <div
+              
               className="w-full flex flex-col sm:flex-row gap-4"
             >
-              <button className="bg-white text-slate-700 px-10 py-4 rounded-2xl font-bold shadow-sm border border-gray-100 hover:bg-gray-50 transition-all">
-                View Curriculum
+              <button className="bg-white text-slate-700 px-10 py-4 rounded-2xl font-bold shadow-sm border border-gray-100 hover:bg-gray-50 transition-all" onClick={() => router.push('/about')}>
+                Learn More
               </button>
-            </Link>
+            </div>
           </div>
         </div>
         <div className="relative">
