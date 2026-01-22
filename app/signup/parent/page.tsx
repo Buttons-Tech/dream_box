@@ -1,15 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import {
-  Plus,
- 
-  Heart,
-  Baby,
-  
-  ShieldCheck,
-  CreditCard,
-} from "lucide-react";
+import { Plus, Heart, Baby, ShieldCheck, CreditCard } from "lucide-react";
 
 export default function ParentSignupPage() {
   const router = useRouter();
@@ -34,9 +26,9 @@ export default function ParentSignupPage() {
       { firstName: "", age: "", interest: "Coding", notes: "" },
     ]);
 
-//   const removeChild = (index: number) => {
-//     setChildren(children.filter((_, i) => i !== index));
-//   };
+  //   const removeChild = (index: number) => {
+  //     setChildren(children.filter((_, i) => i !== index));
+  //   };
 
   const handleChildChange = (index: number, field: string, value: string) => {
     const updated = [...children];
@@ -78,8 +70,11 @@ export default function ParentSignupPage() {
       } else {
         router.push("/signup/success"); // Fallback if payment fails to init
       }
-    } catch (err) {
-      console.error(err);
+    } catch (error: unknown) {
+      // Use 'error' here so the compiler knows it's being handled
+      const message =
+        error instanceof Error ? error.message : "Submission failed";
+      console.error("Dreambox Signup Error:", message);
       alert("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
@@ -97,8 +92,9 @@ export default function ParentSignupPage() {
           />
           <h1 className="text-3xl font-black">Join the Dreambox Family</h1>
           <p className="opacity-80 mt-2">
-{`            The first step toward your child's future in tech.
-`}          </p>
+            {`            The first step toward your child's future in tech.
+`}{" "}
+          </p>
         </div>
 
         <form onSubmit={handleSubmit} className="p-10 space-y-10">
