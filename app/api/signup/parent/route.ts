@@ -28,8 +28,8 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ success: true }, { status: 201 });
-  } catch (err: any) {
-    console.error("Signup Error:", err);
-    return NextResponse.json({ error: err.message }, { status: 500 });
-  }
+  } catch (error: unknown) {
+  const message = error instanceof Error ? error.message : "An unexpected error occurred";
+  return NextResponse.json({ error: message }, { status: 500 });
+}
 }

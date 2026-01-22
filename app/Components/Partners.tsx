@@ -12,7 +12,7 @@ const Partners = () => {
   return (
     <>
     {logos.map((logo, i)=>{
-        <div>
+        <div key={i}>
             <span>HELL</span>
             <Image
                  src={`img/${logo}.png`}

@@ -23,11 +23,8 @@ export async function POST(request: Request) {
       { message: "Application received!", id: newTutor._id }, 
       { status: 201 }
     );
-  } catch (error: any) {
-    console.error("Database Error:", error);
-    return NextResponse.json(
-      { error: "Failed to submit application. Please try again." }, 
-      { status: 500 }
-    );
-  }
+  } catch (error: unknown) {
+  const message = error instanceof Error ? error.message : "An unexpected error occurred";
+  return NextResponse.json({ error: message }, { status: 500 });
+}
 }

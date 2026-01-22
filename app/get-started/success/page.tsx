@@ -19,8 +19,8 @@ const SignupSuccess = () => {
         </div>
 
         <h1 className="text-4xl font-black text-slate-900 mb-4 tracking-tight">
-          You're all set!
-        </h1>
+{`          You're all set!
+`}        </h1>
         <p className="text-gray-500 mb-10 leading-relaxed">
           Your application to join the <span className="text-[#6347D1] font-bold">Dreambox Faculty</span> has been received. 
           Our team in Lagos will review your credentials and get back to you via email.
