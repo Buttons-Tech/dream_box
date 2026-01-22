@@ -24,8 +24,16 @@ const TutorSignup: React.FC = () => {
   country: '',
   experience: ''
 });
+// const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+//   setFormData({ ...formData, [e.target.name]: e.target.value });
+// };
 const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-  setFormData({ ...formData, [e.target.name]: e.target.value });
+  const { name, value } = e.target;
+  
+  setFormData((prev) => ({
+    ...prev,
+    [name]: value
+  }));
 };
   const [step, setStep] = useState(1);
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
@@ -42,13 +50,19 @@ const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectEle
 
   const router = useRouter();
 
+  
+
   const handleSubmit = async () => {
   // Combine the text inputs with the selected skills array
   const finalData = {
-    ...formData,
-    expertise: selectedSkills, // This is the state we created in the previous step
+  firstName: formData.firstName,
+    lastName: formData.lastName,
+    email: formData.email,
+    country: formData.country,
+    experience: formData.experience,
+    expertise: selectedSkills
   };
-
+console.log("Sending to API:", finalData); // Check your console to see if fields are filled!
   try {
     const response = await fetch('/api/tutors', {
       method: 'POST',
@@ -59,12 +73,14 @@ const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectEle
     if (response.ok) {
       // alert("Application Successful!");
       // You can use router.push('/success') here
-      router.push('/signup/success');
+      router.push('/get-started/success');
     }
   } catch (error) {
     console.error("Error submitting form", error);
   }
 };
+
+
 
   return (
     <div className="min-h-screen bg-[#F8F7FF] flex items-center justify-center p-6">
@@ -97,11 +113,11 @@ const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectEle
             <div className="space-y-6">
               <h3 className="text-2xl font-black text-slate-800">Professional Profile</h3>
               <div className="grid grid-cols-2 gap-4">
-                <input type="text" placeholder="First Name" className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl text-sm outline-none focus:ring-2 focus:ring-purple-400" />
-                <input type="text" placeholder="Last Name" className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl text-sm outline-none focus:ring-2 focus:ring-purple-400" />
+                <input onChange={handleInputChange} name="firstName" value={formData.firstName} type="text" placeholder="First Name" className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl text-sm outline-none focus:ring-2 focus:ring-purple-400" />
+                <input onChange={handleInputChange} name="lastName" value={formData.lastName} type="text" placeholder="Last Name" className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl text-sm outline-none focus:ring-2 focus:ring-purple-400" />
               </div>
-              <input type="email" placeholder="Email Address" className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl text-sm outline-none focus:ring-2 focus:ring-purple-400" />
-              <select className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl text-sm outline-none focus:ring-2 focus:ring-purple-400">
+              <input onChange={handleInputChange} name="email" value={formData.email} type="email" placeholder="Email Address" className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl text-sm outline-none focus:ring-2 focus:ring-purple-400" />
+              <select name="country" value={formData.country} onChange={handleInputChange}  className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl text-sm outline-none focus:ring-2 focus:ring-purple-400">
                 <option>Current Country of Residence</option>
                 <option>Nigeria</option>
                 <option>United Kingdom</option>

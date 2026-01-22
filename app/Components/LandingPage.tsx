@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
+import Partners from "./Partners";
 
 
 interface FeatureCardProps {
@@ -131,6 +132,7 @@ const LandingPage: React.FC = () => {
           />
         </div>
       </section>
+        <Partners />
 
       {/* Programs Section */}
       <section className="px-8 py-24 bg-white">
