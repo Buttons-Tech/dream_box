@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 
-// 1. Define the interface (The police now see it's here)
+// 1. Define the interface
 interface TutorData {
   _id: string;
   firstName: string;
@@ -12,8 +12,6 @@ interface TutorData {
 }
 
 export default function TutorDashboard() {
-  // 2. APPLY the type to the useState hook
-  // This tells TS: "tutors is an array of TutorData objects"
   const [tutors, setTutors] = useState<TutorData[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -24,7 +22,8 @@ export default function TutorDashboard() {
         const data = await res.json();
         setTutors(data);
       } catch (error: unknown) {
-        console.error("Fetch error");
+        // FIXED LINE BELOW: We are now actually USING the 'error' variable
+        console.error("Fetch error details:", error);
       } finally {
         setLoading(false);
       }
@@ -38,7 +37,6 @@ export default function TutorDashboard() {
       
       {loading ? <p>Loading...</p> : (
         <div className="grid gap-4">
-          {/* 3. Mapping no longer needs 'any' because the state is typed */}
           {tutors.map((tutor) => (
             <div key={tutor._id} className="p-4 border rounded-xl shadow-sm bg-white">
               <h3 className="font-bold text-lg">{tutor.firstName} {tutor.lastName}</h3>
