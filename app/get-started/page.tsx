@@ -101,6 +101,7 @@ const GetStarted: React.FC = () => {
 
           <div className="space-y-4">
             {/* Parent Sign Up */}
+            <Link href="/signup/parent" className="w-full">
             <button className="w-full group bg-white border-2 border-transparent hover:border-[#6347D1] p-6 rounded-[2rem] shadow-sm hover:shadow-md transition-all flex items-center justify-between">
               <div className="flex items-center gap-6">
                 <div className="bg-orange-100 text-[#FE9B4B] p-4 rounded-2xl group-hover:bg-[#6347D1] group-hover:text-white transition-colors">
@@ -113,7 +114,7 @@ const GetStarted: React.FC = () => {
               </div>
               <ChevronRight className="text-gray-300 group-hover:text-[#6347D1]" />
             </button>
-
+            </Link>
             {/* School Sign Up */}
             <Link href="/get-started/school" className="w-full">
             <button className="w-full group bg-white border-2 border-transparent hover:border-[#6347D1] p-6 rounded-[2rem] shadow-sm hover:shadow-md transition-all flex items-center justify-between">
