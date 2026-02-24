@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import { useRouter } from 'next/navigation';
 import Partners from "./Partners";
+import HeroSection from "./Hero";
+import Hero from "./Hero";
 
 
 interface FeatureCardProps {
@@ -83,54 +85,8 @@ const LandingPage: React.FC = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="px-8 pt-12 pb-24 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <div className="inline-flex items-center gap-2 bg-indigo-50 text-[#6347D1] px-4 py-2 rounded-full text-xs font-bold mb-6">
-            <Globe size={14} />
-            <span>Now Enrolling: Nigeria • US • UK • Canada</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-black text-slate-900 leading-[1.1] mb-6">
-            Building the <span className="text-[#6347D1]">Innovators</span> of
-            Tomorrow.
-          </h1>
-          <p className="text-lg text-gray-500 mb-10 max-w-lg leading-relaxed">
-            From Coding and Robotics to specialized Math & English tutorials. We
-            empower every child—including those with special needs—to dream
-            bigger.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <div
-              
-              className="w-full flex flex-col sm:flex-row gap-4"
-            >
-              <button className="bg-[#FE9B4B] text-white px-10 py-4 rounded-2xl font-bold shadow-lg shadow-orange-100 hover:bg-orange-500 transition-all flex items-center justify-center gap-2" onClick={() => router.push('/get-started')}>
-                Get Started <ChevronRight size={18} />
-              </button>
-            </div>
-
-            <div
-              
-              className="w-full flex flex-col sm:flex-row gap-4"
-            >
-              <button className="bg-white text-slate-700 px-10 py-4 rounded-2xl font-bold shadow-sm border border-gray-100 hover:bg-gray-50 transition-all" onClick={() => router.push('/about')}>
-                Learn More
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="relative">
-          <div className="absolute -top-10 -left-10 w-64 h-64 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-          <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-pink-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
-          <Image
-            src="/img/afrii.jpg"
-            alt="Dreambox Student"
-            width={500}
-            height={500}
-            className="relative z-10 object-contain"
-            priority
-          />
-        </div>
-      </section>
+      
+      <Hero/>
         <Partners />
 
       {/* Programs Section */}
