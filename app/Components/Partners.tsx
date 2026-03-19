@@ -13,7 +13,7 @@ const Partners = () => {
     <>
     {logos.map((logo, i)=>{
         <div key={i}>
-            <span>HELL</span>
+            <span>HELLo</span>
             <Image
                  src={`img/${logo}.png`}
                  alt="Dreambox Student"

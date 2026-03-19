@@ -1,46 +1,40 @@
-import Link from 'next/link';
-import { Search, GraduationCap, ArrowRight, Zap, Code, Brain } from 'lucide-react';
+import Image from "next/image";
 
-export default function HeroSection() {
+
+
+
+
+const Hero = () => {
   return (
-    <section className="relative bg-[#FDFCFE] pt-20 pb-32 overflow-hidden" style={{backgroundImage: "url('/v2/white-sheet.jpg')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
-      {/* Decorative Blobs */}
-      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-purple-100 rounded-full blur-3xl opacity-50" />
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80" 
+          alt="Virtual School Background" 
+          className="w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white"></div>
+      </div>
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-        <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-purple-50 mb-8">
-          <Zap size={16} className="text-orange-400 fill-orange-400" />
-          <span className="text-sm font-bold text-slate-600">Now Enrolling in Nigeria, US, UK and Canada</span>
-        </div>
-
-        <h1 className="text-5xl md:text-7xl font-black text-slate-900 mb-6 leading-tight">
-          <span className="text-[#6347D1]">DREAMBOX</span> <br />
-           ACADEMY<br />
-          
-        </h1>
-        
-        <p className="text-xl text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Global School for Limitless Learning
+      <div className="relative z-10 text-center max-w-4xl px-4">
+        <h2 className="text-5xl md:text-7xl font-extrabold text-gray-900 mb-6">
+          Empowering the Next Generation of <span className="text-blue-600">Creators</span>
+        </h2>
+        <p className="text-lg md:text-xl text-gray-600 mb-10">
+          Bridging the gap between traditional education and global tech realities through 
+          innovation, robotics, and personalized learning.
         </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          {/* THE MAIN ENTRY POINT */}
-          <Link href="/tutors" className="group w-full sm:w-auto bg-[#6347D1] text-white px-10 py-5 rounded-[2rem] font-black text-lg shadow-2xl shadow-purple-200 hover:bg-[#523bb3] transition-all flex items-center justify-center gap-3">
-            Find a Tutor <Search size={20} />
-          </Link>
-
-          <Link href="/signup/parent" className="w-full sm:w-auto bg-white text-slate-900 border-2 border-slate-100 px-10 py-5 rounded-[2rem] font-black text-lg hover:bg-slate-50 transition-all flex items-center justify-center gap-3">
-            Enroll Now <ArrowRight size={20} />
-          </Link>
-        </div>
-
-        {/* Quick Trust Badges */}
-        <div className="mt-16 flex flex-wrap justify-center gap-8 opacity-40 grayscale">
-          <div className="flex items-center gap-2 font-bold text-xl"><GraduationCap /> Verified Mentors</div>
-          <div className="flex items-center gap-2 font-bold text-xl"><Code /> 1-on-1 Coding</div>
-          <div className="flex items-center gap-2 font-bold text-xl"><Brain /> Personalized Growth</div>
+        <div className="flex flex-col md:flex-row gap-4 justify-center">
+          <button className="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-lg transition">
+            Sign Up My Child
+          </button>
+          <button className="bg-white border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-50 transition">
+            Bring Dreambox to My School
+          </button>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Hero
