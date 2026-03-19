@@ -4,6 +4,14 @@ const nextConfig: NextConfig = {
   /* config options here */
   images: {
     domains: ['illustrations.popsy.co', 'i.pravatar.cc'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
 };
 
