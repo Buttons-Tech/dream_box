@@ -11,6 +11,7 @@ const Hero = () => {
         <Image 
           src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80" 
           alt="Virtual School Background" 
+          fill
           className="w-full h-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white"></div>
