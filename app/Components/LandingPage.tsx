@@ -1,5 +1,4 @@
 // import Navbar from '@/components/Navbar';
-import PropertyCard from './PropertyCard';
 
 export default function LandingPage() {
   return (
@@ -10,7 +9,7 @@ export default function LandingPage() {
         
         <div className="relative z-10 w-full max-w-4xl px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6">
-            Find a Home in Lagos <br/> <span className="text-emerald-400 font-medium italic">Without the "Agent" Stress.</span>
+            Find a Home in Lagos <br/> <span className="text-emerald-400 font-medium italic">{`Without the "Agent" Stress.`}</span>
           </h1>
           
           <p className="text-lg text-slate-200 mb-8 max-w-2xl mx-auto">

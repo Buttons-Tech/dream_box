@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Academies = () => {
   const levels = [
     { 
@@ -44,10 +46,12 @@ const Academies = () => {
           {levels.map((lvl, i) => (
             <div key={i} className="group flex flex-col h-full bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
               <div className="relative h-48 w-full overflow-hidden">
-                <img 
+                <Image 
                   src={lvl.img} 
                   alt={lvl.name} 
                   className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
+                  width={400}
+                  height={300}
                 />
                 <div className="absolute top-4 left-4">
                   <span className="bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">

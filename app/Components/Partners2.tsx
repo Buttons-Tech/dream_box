@@ -28,16 +28,25 @@ const Partners2 = () => {
         <div className="relative flex overflow-x-hidden">
           <div className="py-4 animate-marquee whitespace-nowrap flex items-center space-x-16">
             {partnerLogos.map((logo, i) => (
-              <img 
+              <Image 
                 key={i} 
                 src={logo} 
+                height={50}
+                width={100}
                 alt="Partner School" 
                 className="h-16 w-auto object-contain mix-blend-multiply opacity-80 hover:opacity-100 transition" 
               />
             ))}
             {/* Duplicate for seamless loop */}
             {partnerLogos.map((logo, i) => (
-              <img key={`dup-${i}`} src={logo} alt="Partner School" className="h-16 w-auto object-contain mix-blend-multiply opacity-80" />
+              <Image 
+                key={`dup-${i}`} 
+                src={logo} 
+                height={50}
+                width={100}
+                alt="Partner School" 
+                className="h-16 w-auto object-contain mix-blend-multiply opacity-80" 
+              />
             ))}
           </div>
         </div>
