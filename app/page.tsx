@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import Academies from "./Components/Academies";
 import Events from "./Components/Events";
 import Features from "./Components/Features";
@@ -7,13 +9,21 @@ import Partners2 from "./Components/Partners2";
 import SchoolCTA from "./Components/SchoolCTA";
 import Story from "./Components/Story";
 import Subjects from "./Components/Subjects";
+import SignupModal from "./Components/SignupModal";
+
 
 
 export default function Home() {
+  const [isSignupOpen, setIsSignupOpen] = useState(false);
   return (
         <>
         <Nav_bar/>
-        <Hero/>
+
+        <Hero onSignUpClick={() => setIsSignupOpen(true)}/>
+          <SignupModal 
+        isOpen={isSignupOpen} 
+        onClose={() => setIsSignupOpen(false)} 
+      />
         <Partners2/>
         <Features/>
         <Academies/>

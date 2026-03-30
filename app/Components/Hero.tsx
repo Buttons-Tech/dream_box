@@ -1,10 +1,15 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+
+interface HeroProps {
+  onSignUpClick: () => void;
+}
 
 
+const Hero = ({ onSignUpClick }: HeroProps) => {
+  const router = typeof window !== "undefined" ? useRouter() : null;
 
-
-
-const Hero = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -14,28 +19,37 @@ const Hero = () => {
           fill
           className="w-full h-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white"></div>
+        {/* Brand Gradient: Purple to White */}
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-50/50 via-transparent to-white"></div>
       </div>
       
       <div className="relative z-10 text-center max-w-4xl px-4">
         <h2 className="text-5xl md:text-7xl font-extrabold text-gray-900 mb-6">
-          Empowering the Next Generation of <span className="text-blue-600">Creators</span>
+          Empowering the Next Generation of <span className="text-purple-700">Creators</span>
         </h2>
         <p className="text-lg md:text-xl text-gray-600 mb-10">
-          Bridging the gap between traditional education and global tech realities through 
-          innovation, robotics, and personalized learning.
+          Bridging the gap between traditional education and global realities through 
+          creativity, innovation, technology and personalized learning.
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <button className="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-lg transition">
+          <button 
+            onClick={onSignUpClick}
+            className="bg-purple-700 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-purple-800 hover:shadow-lg transition flex items-center justify-center gap-2"
+          >
             Sign Up My Child
+            <span className="w-2 h-2 bg-yellow-400 rounded-full animate-ping"></span>
           </button>
-          <button className="bg-white border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-50 transition">
+          <button 
+            onClick={() => router?.push('/contact-school')}
+            className="bg-white border-2 border-purple-700 text-purple-700 px-8 py-4 rounded-xl text-lg font-bold hover:bg-purple-50 transition"
+          >
             Bring Dreambox to My School
           </button>
         </div>
       </div>
+      
     </section>
   );
 };
 
-export default Hero
+export default Hero;
