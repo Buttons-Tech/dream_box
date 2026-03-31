@@ -6,10 +6,12 @@ import Features from "./Components/Features";
 import Hero from "./Components/Hero";
 import Nav_bar from "./Components/Nav_bar";
 import Partners2 from "./Components/Partners2";
-import SchoolCTA from "./Components/SchoolCTA";
+// import SchoolCTA from "./Components/SchoolCTA";
 import Story from "./Components/Story";
 import Subjects from "./Components/Subjects";
 import SignupModal from "./Components/SignupModal";
+// import MissionReport from "./Components/MissionReport";
+import SchoolCTA from "./Components/SchoolCTA";
 
 
 
@@ -31,6 +33,7 @@ export default function Home() {
         <Events/>
         <Story/>
         <SchoolCTA/>
+        {/* <MissionReport /> */}
         
 
 

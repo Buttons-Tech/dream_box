@@ -25,7 +25,7 @@ const SubjectPicker: React.FC = () => {
   return (
     <div className="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-purple-700 max-w-2xl mx-auto">
       <h3 className="text-2xl font-bold mb-2">Equip Your Creator</h3>
-      <p className="text-gray-500 mb-8 text-sm italic">Select the subjects for this term's mission.</p>
+      <p className="text-gray-500 mb-8 text-sm italic">S{`elect the subjects for this term's mission.`}</p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
         {MOCK_SUBJECTS.map(sub => (

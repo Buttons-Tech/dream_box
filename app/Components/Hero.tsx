@@ -8,7 +8,7 @@ interface HeroProps {
 
 
 const Hero = ({ onSignUpClick }: HeroProps) => {
-  const router = typeof window !== "undefined" ? useRouter() : null;
+  const router = useRouter() 
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
