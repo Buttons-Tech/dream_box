@@ -86,9 +86,9 @@ const SignupModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpe
             <p className="text-gray-500 text-sm">To activate <b>{formData.name}</b>, transfer <b>₦20,000</b> to:</p>
             
             <div className="bg-purple-50 p-6 rounded-2xl border-2 border-dashed border-purple-200 font-mono">
-              <p className="text-xl font-black text-gray-900">0123456789</p>
-              <p className="font-bold text-gray-700">Moniepoint / OPay</p>
-              <p className="text-xs text-gray-500">Buttons Technology / Dreambox</p>
+              <p className="text-xl font-black text-gray-900">9066596603</p>
+              <p className="font-bold text-gray-700">Moniepoint </p>
+              <p className="text-xs text-gray-500">Paatee Nig Ltd</p>
             </div>
 
             <button 
