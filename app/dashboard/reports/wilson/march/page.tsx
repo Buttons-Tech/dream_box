@@ -82,7 +82,7 @@ const WilsonReportPage = () => {
 
           <div className="p-8 bg-blue-600 text-white rounded-[2rem] shadow-lg shadow-blue-200">
              <h4 className="text-xs font-bold uppercase tracking-widest mb-4 opacity-80">Test Readiness</h4>
-             <p className="text-lg font-medium leading-relaxed italic">"Wilson is currently performing ahead of his classmates."</p>
+             <p className="text-lg font-medium leading-relaxed italic">&quot;Wilson is currently performing ahead of his classmates.&quot;</p>
           </div>
         </div>
 
