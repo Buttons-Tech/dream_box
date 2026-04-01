@@ -2,6 +2,14 @@
 import React from 'react';
 import Image from 'next/image';
 
+interface StatProps {
+  label: string;
+  score: number;
+  total: number;
+  color: string;
+  text: string;
+}
+
 const DreamboxReportPage = () => {
   // Mock data based on your notes for Victor
   const report = {
@@ -144,7 +152,7 @@ const DreamboxReportPage = () => {
 };
 
 // Sub-component for clean status circles
-function StatCircle({ label, score, total, color, text }: any) {
+function StatCircle({ label, score, total, color, text }: StatProps) {
   // const percentage = (score / total) * 100;
   return (
     <div className="space-y-3">
