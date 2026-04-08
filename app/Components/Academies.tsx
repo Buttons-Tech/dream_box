@@ -6,7 +6,7 @@ const Academies = () => {
       name: "Early Years", 
       age: "0-5 Years", 
       desc: "Foundational growth and sensory learning for our youngest explorers.",
-      img: "https://images.unsplash.com/photo-1587654711464-3e30d1ca9335?auto=format&fit=crop&q=80" 
+      img: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80" 
     },
     { 
       name: "Dreambox Foundation", 
