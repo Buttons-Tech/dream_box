@@ -1,6 +1,9 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 
+import type { Metadata } from "next";
+import ClientNavigation from "@/app/Components/ClientNavigation";
+
 // Define the fonts and load them.
 // We are using `variable` to assign a CSS variable name for each font,
 // which makes them easy to use with Tailwind CSS in your components.
@@ -18,7 +21,7 @@ const inter = Inter({
 
 export const metadata = {
   title: 'Dreambox Creative Tech Academy',
-  description: 'Coding, Robotics, and Design classes for children in Lagos, Nigeria.',
+  description: 'Next-gen learning for future innovators. Join Dreambox Academy to unlock your child’s potential. Enroll now for a brighter tomorrow!',
 };
 
 export default function RootLayout({
@@ -32,7 +35,10 @@ export default function RootLayout({
     // The font variables are applied to the entire body here.
     <html lang="en" className="light">
       <body className={`${inter.variable} font-inter`}>
-        {children}
+        <ClientNavigation />
+        <main className="pt-20"> {/* Padding so content doesn't hide under Nav */}
+          {children}
+        </main>
       </body>
     </html>
   );
