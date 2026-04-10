@@ -12,20 +12,20 @@ const Hero = ({ onSignUpClick }: HeroProps) => {
   return (
     <section className="relative min-h-screen flex items-center pt-10 lg:pt-20 overflow-hidden bg-white">
       {/* Decorative Brand Blobs */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-yellow-400/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute top-20 l eft-10 w-32 h-32 bg-yellow-400/20 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-10 right-10 w-64 h-64 bg-purple-700/10 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-        
+
         {/* LEFT COLUMN: The "Whole Child" Hook */}
         <div className="text-left space-y-6 md:space-y-8 order-2 lg:order-1">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full border border-purple-100">
             <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-purple-700">Early Years • Primary • Tech Academy</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-purple-700">Special Needs • Home Schooling • School Tech & Art club</span>
           </div>
 
           <h2 className="text-4xl md:text-7xl font-black text-gray-900 leading-[0.95] tracking-tighter uppercase italic">
-            Where <span className="text-purple-700">Literacy</span> <br />
+            Where <span className="text-purple-700">Online SChooling</span> <br />
             Meets <span className="text-yellow-500 underline decoration-purple-700">Innovation</span>
           </h2>
 
