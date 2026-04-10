@@ -27,6 +27,7 @@ export default function Home() {
       />
         <Partners2/>
         <Features/>
+        
         <Academies/>
         <Subjects/>
         <Events/>

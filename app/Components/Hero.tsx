@@ -21,7 +21,7 @@ const Hero = ({ onSignUpClick }: HeroProps) => {
         <div className="text-left space-y-6 md:space-y-8 order-2 lg:order-1">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full border border-purple-100">
             <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-purple-700">Special Needs • Home Schooling • School Tech & Art club</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-purple-700">Special Needs • Home Schooling • School Tech Club</span>
           </div>
 
           <h2 className="text-4xl md:text-7xl font-black text-gray-900 leading-[0.95] tracking-tighter uppercase italic">
@@ -67,7 +67,7 @@ const Hero = ({ onSignUpClick }: HeroProps) => {
             {/* BALANCED BADGES: Tech vs. Early Years */}
             <div className="absolute -top-4 -left-4 z-20 bg-yellow-400 p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-xl -rotate-6">
                 <p className="text-xl md:text-2xl">📖</p>
-                <p className="text-[9px] md:text-[10px] font-black uppercase text-purple-950">Literacy</p>
+                <p className="text-[9px] md:text-[10px] font-black uppercase text-purple-950">Online Schooling</p>
             </div>
             
             <div className="absolute bottom-10 -right-4 z-20 bg-white p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-xl rotate-6 border border-purple-100">
@@ -75,9 +75,13 @@ const Hero = ({ onSignUpClick }: HeroProps) => {
                 <p className="text-[9px] md:text-[10px] font-black uppercase text-purple-700">Early Years</p>
             </div>
 
-            <div className="absolute top-1/2 -left-8 z-20 bg-purple-700 p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-xl -rotate-12 lg:block hidden">
+            <div className="absolute top-12 -left-8 z-30 bg-purple-700 p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-xl -rotate-12 lg:block hidden">
                 <p className="text-xl md:text-2xl">🤖</p>
-                <p className="text-[9px] md:text-[10px] font-black uppercase text-white">STEM</p>
+                <p className="text-[9px] md:text-[10px] font-black uppercase text-white">TECH Academy</p>
+            </div>
+              <div className="absolute bottom-23 -right-8 z-30 bg-purple-700 p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-xl -rotate-12 lg:block hidden">
+                <p className="text-xl md:text-2xl">📖</p>
+                <p className="text-[9px] md:text-[10px] font-black uppercase text-white">Tutoring</p>
             </div>
         </div>
       </div>

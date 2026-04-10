@@ -159,8 +159,8 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
               <h2 className="text-3xl font-black text-purple-700 italic uppercase">Sync Complete</h2>
               <p className="text-gray-500 text-sm px-4 leading-relaxed">Account verified and saved locally. Welcome to Dreambox!</p>
               <div className="bg-purple-50 p-6 rounded-[2.5rem] border-2 border-dashed border-purple-200">
-                <p className="text-2xl font-black text-gray-900 tracking-widest">0123456789</p>
-                <p className="font-bold text-gray-600 text-[10px] uppercase mt-1">Moniepoint / OPay</p>
+                <p className="text-2xl font-black text-gray-900 tracking-widest">9066596603</p>
+                <p className="font-bold text-gray-600 text-[10px] uppercase mt-1">PAATEE NIG ltd -Moniepoint</p>
               </div>
               <button type="button" onClick={() => { router.push('/dashboard'); }} className="w-full bg-green-600 text-white py-5 rounded-2xl font-black shadow-xl hover:bg-green-700 transition-all uppercase tracking-widest">Enter Dashboard</button>
             </div>
