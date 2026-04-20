@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const [pilotName, setPilotName] = useState("Pilot");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const router = useRouter();
 
   useEffect(() => {
     const name = localStorage.getItem('pilot_name');

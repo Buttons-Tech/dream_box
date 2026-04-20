@@ -31,7 +31,7 @@ export default function DashboardPage() {
       try {
         setUserData(JSON.parse(savedUser));
       } catch (e) {
-        console.error("Failed to parse user data");
+        console.error("Failed to parse user data" + e);
       } finally {
         setLoading(false);
       }

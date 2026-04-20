@@ -21,8 +21,8 @@ const Hero = ({ onSignUpClick }: HeroProps) => {
         <div className="text-left space-y-6 md:space-y-8 order-2 lg:order-1">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full border border-purple-100">
             <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-purple-700">Special Needs • Home Schooling • School Tech Club</span>
-          </div>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-purple-700">• Home Schooling • K-12 • IGCSE/GCSE Prep • Tech Academy</span>
+          </div> 
 
           <h2 className="text-4xl md:text-7xl font-black text-gray-900 leading-[0.95] tracking-tighter uppercase italic">
             Where <span className="text-purple-700">Online SChooling</span> <br />
@@ -84,7 +84,7 @@ const Hero = ({ onSignUpClick }: HeroProps) => {
                 <p className="text-[9px] md:text-[10px] font-black uppercase text-white">Tutoring</p>
             </div>
         </div>
-      </div>
+      </div>  
     </section>
   );
 };

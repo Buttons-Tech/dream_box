@@ -1,7 +1,7 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import ClientNavigation from "@/app/Components/ClientNavigation";
 
 // Define the fonts and load them.

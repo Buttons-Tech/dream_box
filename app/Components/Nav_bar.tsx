@@ -4,9 +4,10 @@ import { useRouter } from 'next/navigation';
 
 interface NavBarProps {
   onLoginClick: () => void;
+  onTutorClick: () => void;
 }
 
-const Nav_bar: React.FC<NavBarProps> = ({ onLoginClick }) => {
+const Nav_bar: React.FC<NavBarProps> = ({ onLoginClick, onTutorClick }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Controls the mobile menu
   const router = useRouter();
@@ -33,7 +34,8 @@ const Nav_bar: React.FC<NavBarProps> = ({ onLoginClick }) => {
             <a href="#about" className="hover:text-purple-600 transition text-[11px]">About</a>
             <a href="#academies" className="hover:text-purple-600 transition text-[11px]">Academies</a>
             {!isLoggedIn && (
-              <button className="text-[10px] font-black text-gray-400 hover:text-yellow-600 transition-colors">
+
+              <button onClick={onTutorClick} className="text-[10px] font-black text-gray-400 hover:text-yellow-600 transition-colors">
                 Become a Tutor
               </button>
             )}
@@ -76,7 +78,9 @@ const Nav_bar: React.FC<NavBarProps> = ({ onLoginClick }) => {
             <a href="#academies" onClick={() => setIsMenuOpen(false)} className="p-4 text-xs font-black uppercase text-gray-700 hover:bg-purple-50 rounded-2xl">Academies</a>
             <a href="#curriculum" onClick={() => setIsMenuOpen(false)} className="p-4 text-xs font-black uppercase text-gray-700 hover:bg-purple-50 rounded-2xl">Curriculum</a>
             <hr className="border-purple-50" />
-            <button className="p-4 text-left text-[10px] font-black uppercase text-purple-600">Become a Tutor</button>
+
+            <button onClick={onTutorClick} className="p-4 text-left text-[10px] font-black uppercase text-purple-600">Become a Tutor</button>
+
           </div>
         </div>
       )}

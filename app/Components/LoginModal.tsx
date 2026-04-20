@@ -33,7 +33,7 @@ export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClo
         alert(data.message || "Invalid Credentials");
       }
     } catch (err) {
-      alert("Server Connection Failed");
+      alert("Server Connection Failed" + err);
     } finally {
       setLoading(false);
     }

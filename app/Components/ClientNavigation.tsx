@@ -5,10 +5,12 @@ import { usePathname } from 'next/navigation'; // Import this hook
 import Nav_bar from './Nav_bar';
 import SignupModal from './SignupModal';
 import LoginModal from './LoginModal';
+import TutorSignupModal from './TutorSignupModal';
 
 export default function ClientNavigation() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSignupOpen, setIsSignupOpen] = useState(false);
+  const [isTutorOpen, setIsTutorOpen] = useState(false);
   
   const pathname = usePathname(); // Get the current URL path
 
@@ -19,12 +21,13 @@ export default function ClientNavigation() {
     <>
       {/* Only show the official Nav_bar if we are NOT in the dashboard */}
       {!isDashboard && (
-        <Nav_bar onLoginClick={() => setIsLoginOpen(true)} />
+        <Nav_bar onLoginClick={() => setIsLoginOpen(true)}  onTutorClick={() => setIsTutorOpen(true)}/>
       )}
       
       {/* Modals can stay global so they can be triggered from anywhere if needed */}
       <SignupModal isOpen={isSignupOpen} onClose={() => setIsSignupOpen(false)} />
       <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
+      <TutorSignupModal isOpen={isTutorOpen} onClose={() => setIsTutorOpen(false)} />
     </>
   );
 }
