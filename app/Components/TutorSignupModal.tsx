@@ -1,4 +1,5 @@
 "use client";
+import Router from 'next/router';
 import React, { useState } from 'react';
 
 interface ModalProps {
@@ -7,6 +8,7 @@ interface ModalProps {
 }
 
 export default function TutorSignupModal({ isOpen, onClose }: ModalProps) {
+    
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
@@ -30,7 +32,15 @@ export default function TutorSignupModal({ isOpen, onClose }: ModalProps) {
       });
 
       if (response.ok) {
-        alert("Application Submitted! Welcome to the Faculty.");
+        
+        const data = await response.json();
+  // Store the user data
+  localStorage.setItem('dbx_user', JSON.stringify(data.user));
+  localStorage.setItem('dbx_token', data.token);
+  
+  // Direct to the Tutor Dashboard
+  Router.push('/tutor'); 
+  onClose();
         onClose();
       }
     } catch (error) {
@@ -58,7 +68,7 @@ export default function TutorSignupModal({ isOpen, onClose }: ModalProps) {
               required
               type="text" 
               placeholder="FULL NAME" 
-              className="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase tracking-widest outline-purple-700"
+              className="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase tracking-widest outline-purple-700 text-gray-900 !opacity-100 [appearance:none] [-webkit-appearance:none]"
               onChange={(e) => setFormData({...formData, fullName: e.target.value})}
             />
             
@@ -67,14 +77,14 @@ export default function TutorSignupModal({ isOpen, onClose }: ModalProps) {
                 required
                 type="text" 
                 placeholder="CITY / COUNTRY" 
-                className="p-4 bg-gray-50 border border-gray-100 rounded-2xl text-[10px] font-bold uppercase tracking-widest outline-purple-700"
+                className="p-4 bg-gray-50 border border-gray-100 rounded-2xl text-[10px] font-bold uppercase tracking-widest outline-purple-700 text-gray-900 !opacity-100 [appearance:none] [-webkit-appearance:none]"
                 onChange={(e) => setFormData({...formData, location: e.target.value})}
               />
               <input 
                 required
                 type="text" 
                 placeholder="EXP (e.g. 5 Years)" 
-                className="p-4 bg-gray-50 border border-gray-100 rounded-2xl text-[10px] font-bold uppercase tracking-widest outline-purple-700"
+                className="p-4 bg-gray-50 border border-gray-100 rounded-2xl text-[10px] font-bold uppercase tracking-widest outline-purple-700 text-gray-900 !opacity-100 [appearance:none] [-webkit-appearance:none]"
                 onChange={(e) => setFormData({...formData, experience: e.target.value})}
               />
             </div>
@@ -93,7 +103,7 @@ export default function TutorSignupModal({ isOpen, onClose }: ModalProps) {
               required
               type="email" 
               placeholder="EMAIL ADDRESS" 
-              className="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase tracking-widest outline-purple-700"
+              className="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase tracking-widest outline-purple-700 text-gray-900 !opacity-100 [appearance:none] [-webkit-appearance:none]"
               onChange={(e) => setFormData({...formData, email: e.target.value})}
             />
 
@@ -101,7 +111,7 @@ export default function TutorSignupModal({ isOpen, onClose }: ModalProps) {
               required
               type="password" 
               placeholder="PASSWORD" 
-              className="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase tracking-widest outline-purple-700"
+              className="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase tracking-widest outline-purple-700 text-gray-900 !opacity-100 [appearance:none] [-webkit-appearance:none]"
               onChange={(e) => setFormData({...formData, password: e.target.value})}
             />
 
