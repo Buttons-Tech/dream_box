@@ -162,7 +162,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
                 <p className="text-2xl font-black text-gray-900 tracking-widest">9066596603</p>
                 <p className="font-bold text-gray-600 text-[10px] uppercase mt-1">PAATEE NIG ltd -Moniepoint</p>
               </div>
-              <button type="button" onClick={() => { router.push('/dashboard'); }} className="w-full bg-green-600 text-white py-5 rounded-2xl font-black shadow-xl hover:bg-green-700 transition-all uppercase tracking-widest">Enter Dashboard</button>
+              <button type="button" onClick={() => { router.push('/student'); }} className="w-full bg-green-600 text-white py-5 rounded-2xl font-black shadow-xl hover:bg-green-700 transition-all uppercase tracking-widest">Enter Dashboard</button>
             </div>
           )}
 
