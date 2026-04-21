@@ -1,5 +1,5 @@
 "use client";
-import Router from 'next/router';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
 interface ModalProps {
@@ -8,7 +8,7 @@ interface ModalProps {
 }
 
 export default function TutorSignupModal({ isOpen, onClose }: ModalProps) {
-    
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
@@ -31,18 +31,16 @@ export default function TutorSignupModal({ isOpen, onClose }: ModalProps) {
         body: JSON.stringify(formData), // This matches his JSON structure perfectly
       });
 
-      if (response.ok) {
-        
-        const data = await response.json();
-  // Store the user data
-  localStorage.setItem('dbx_user', JSON.stringify(data.user));
-  localStorage.setItem('dbx_token', data.token);
-  
-  // Direct to the Tutor Dashboard
-  Router.push('/tutor'); 
-  onClose();
-        onClose();
-      }
+  if (response.ok) {
+    const data = await response.json();
+    // Store the user data
+    localStorage.setItem('dbx_user', JSON.stringify(data.user));
+    localStorage.setItem('dbx_token', data.token);
+    
+    // Direct to the Tutor Dashboard
+    router.push('/tutor');
+    onClose();
+  }
     } catch (error) {
       console.error("Onboarding error:", error);
     } finally {
