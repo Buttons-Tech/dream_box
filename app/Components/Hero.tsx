@@ -1,13 +1,20 @@
 "use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import SchoolSignupModal from '@/app/Components/SchoolSignupModal';
+
 
 interface HeroProps {
   onSignUpClick: () => void;
+
 }
 
 const Hero = ({ onSignUpClick }: HeroProps) => {
   const router = useRouter(); 
+    const [isSchoolModalOpen, setIsSchoolModalOpen] = useState(false);
+
+
 
   return (
     <section className="relative min-h-screen flex items-center pt-10 lg:pt-20 overflow-hidden bg-white">
@@ -26,7 +33,7 @@ const Hero = ({ onSignUpClick }: HeroProps) => {
 
           <h2 className="text-4xl md:text-7xl font-black text-gray-900 leading-[0.95] tracking-tighter uppercase italic">
             Where <span className="text-purple-700">Online SChooling</span> <br />
-            Meets <span className="text-yellow-500 underline decoration-purple-700">Innovation</span>
+            Meets <span className="text-yellow-500 underline decoration-purple-700">Innovation Chigzie</span>
           </h2>
 
           <p className="text-base md:text-lg text-gray-600 font-medium max-w-lg leading-relaxed">
@@ -41,11 +48,16 @@ const Hero = ({ onSignUpClick }: HeroProps) => {
               Enroll My Child
             </button>
             <button 
-              onClick={() => router?.push('/contact-school')}
+              // onClick={() => router?.push('/contact-school')}
+              onClick={() => setIsSchoolModalOpen(true)}
               className="bg-white border-2 border-purple-700 text-purple-700 px-8 py-4 md:py-5 rounded-2xl text-xs font-black uppercase tracking-widest hover:bg-purple-50 transition-all"
             >
               For Schools
             </button>
+            <SchoolSignupModal
+        isOpen={isSchoolModalOpen} 
+        onClose={() => setIsSchoolModalOpen(false)} 
+      />
           </div>
         </div>
 

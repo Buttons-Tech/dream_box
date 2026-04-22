@@ -64,7 +64,7 @@ export default function TutorDashboard() {
           {/* Decorative background text */}
           <div className="absolute right-0 bottom-0 opacity-10 text-9xl font-black italic -mb-10 -mr-10 select-none">
             FACULTY
-          </div>
+          </div> 
         </section>
 
         {/* STATS GRID */}

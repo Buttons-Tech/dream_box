@@ -16,6 +16,7 @@ import SchoolCTA from "./Components/SchoolCTA";
 
 export default function Home() {
   const [isSignupOpen, setIsSignupOpen] = useState(false);
+  const [isSchoolModalOpen, setIsSchoolModalOpen] = useState(false);
   return (
         <>
         
@@ -25,6 +26,7 @@ export default function Home() {
         isOpen={isSignupOpen} 
         onClose={() => setIsSignupOpen(false)} 
       />
+      
         <Partners2/>
         <Features/>
         
