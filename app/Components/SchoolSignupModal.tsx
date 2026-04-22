@@ -82,20 +82,20 @@ export default function SchoolSignupModal({ isOpen, onClose }: ModalProps) {
             {step === 1 ? (
               <>
                 <input required type="text" placeholder="SCHOOL NAME (e.g. Little Treasures)" 
-                  className="w-full p-5 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase outline-orange-600"
+                  className="w-full p-5 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase outline-orange-600 text-gray-900 opacity-100 placeholder:text-gray-500 [appearance:none]"
                   onChange={(e) => setFormData({...formData, schoolName: e.target.value})} />
                 <input required type="email" placeholder="ADMIN EMAIL" 
-                  className="w-full p-5 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase outline-orange-600"
+                  className="w-full p-5 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase outline-orange-600 text-gray-900 opacity-100 placeholder:text-gray-500 [appearance:none]"
                   onChange={(e) => setFormData({...formData, email: e.target.value})} />
                 <input required type="password" placeholder="SET PASSWORD" 
-                  className="w-full p-5 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase outline-orange-600"
+                  className="w-full p-5 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase outline-orange-600 text-gray-900 opacity-100 placeholder:text-gray-500 [appearance:none]"
                   onChange={(e) => setFormData({...formData, password: e.target.value})} />
                 <button type="button" onClick={() => setStep(2)} className="w-full bg-gray-900 text-white py-5 rounded-2xl font-black text-xs uppercase">Next: Club Details</button>
               </>
             ) : (
               <>
                 <label className="text-[10px] font-black uppercase text-gray-400 ml-2">Primary Subject</label>
-                <select className="w-full p-5 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase outline-orange-600"
+                <select className="w-full p-5 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase outline-orange-600 text-gray-900 opacity-100 placeholder:text-gray-500 [appearance:none]"
                   onChange={(e) => setFormData({...formData, subject: e.target.value})}>
                   <option value="Leggo & Robotics">LEGGO & ROBOTICS</option>
                   <option value="Coding for Kids">CODING FOR KIDS</option>
@@ -103,7 +103,7 @@ export default function SchoolSignupModal({ isOpen, onClose }: ModalProps) {
                 </select>
                 
                 <label className="text-[10px] font-black uppercase text-gray-400 ml-2">Preferred Day</label>
-                <select className="w-full p-5 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase outline-orange-600"
+                <select className="w-full p-5 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase outline-orange-600 text-gray-900 opacity-100 placeholder:text-gray-500 [appearance:none]"
                   onChange={(e) => setFormData({...formData, schedule: e.target.value})}>
                   <option value="Tuesdays">TUESDAYS</option>
                   <option value="Thursdays">THURSDAYS</option>
