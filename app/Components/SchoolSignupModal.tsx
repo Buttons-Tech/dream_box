@@ -42,6 +42,7 @@ export default function SchoolSignupModal({ isOpen, onClose }: ModalProps) {
       if (userRes.ok) {
         const userData = await userRes.json();
         localStorage.setItem('dbx_user', JSON.stringify(userData.user));
+        localStorage.setItem('dbx_role', userData.user.role);
         
         // STEP 2: Initialize the Club
         await fetch(`${process.env.NEXT_PUBLIC_API_URL}/clubs/initialize`, {
