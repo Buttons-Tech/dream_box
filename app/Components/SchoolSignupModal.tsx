@@ -52,7 +52,7 @@ export default function SchoolSignupModal({ isOpen, onClose }: ModalProps) {
             schoolName: formData.schoolName,
             subject: formData.subject,
             schedule: formData.schedule,
-            adminId: userData.user._id
+            schoolAdminId: userData.user._id
           }),
         });
 
