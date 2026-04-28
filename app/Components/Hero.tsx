@@ -7,10 +7,11 @@ import SchoolSignupModal from '@/app/Components/SchoolSignupModal';
 
 interface HeroProps {
   onSignUpClick: () => void;
+  onSchoolSignUpClick: () => void;
 
 }
 
-const Hero = ({ onSignUpClick }: HeroProps) => {
+const Hero = ({ onSignUpClick, onSchoolSignUpClick }: HeroProps) => {
   const router = useRouter(); 
     const [isSchoolModalOpen, setIsSchoolModalOpen] = useState(false);
 
@@ -49,7 +50,7 @@ const Hero = ({ onSignUpClick }: HeroProps) => {
             </button>
             <button 
               // onClick={() => router?.push('/contact-school')}
-              onClick={() => setIsSchoolModalOpen(true)}
+              onClick={onSchoolSignUpClick}
               className="bg-white border-2 border-purple-700 text-purple-700 px-8 py-4 md:py-5 rounded-2xl text-xs font-black uppercase tracking-widest hover:bg-purple-50 transition-all"
             >
               For Schools

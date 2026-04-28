@@ -11,6 +11,7 @@ import Subjects from "./Components/Subjects";
 import SignupModal from "./Components/SignupModal";
 // import MissionReport from "./Components/MissionReport";
 import SchoolCTA from "./Components/SchoolCTA";
+import SchoolSignupModal from './Components/SchoolSignupModal';
 
 
 
@@ -21,10 +22,14 @@ export default function Home() {
         <>
         
 
-        <Hero onSignUpClick={() => setIsSignupOpen(true)}/>
+        <Hero onSignUpClick={() => setIsSignupOpen(true)} onSchoolSignUpClick={() => setIsSchoolModalOpen(true)}/>
           <SignupModal 
         isOpen={isSignupOpen} 
         onClose={() => setIsSignupOpen(false)} 
+      />
+      <SchoolSignupModal
+        isOpen={isSchoolModalOpen} 
+        onClose={() => setIsSchoolModalOpen(false)} 
       />
       
         <Partners2/>
