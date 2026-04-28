@@ -33,7 +33,7 @@ const Hero = ({ onSignUpClick }: HeroProps) => {
 
           <h2 className="text-4xl md:text-7xl font-black text-gray-900 leading-[0.95] tracking-tighter uppercase italic">
             Where <span className="text-purple-700">Online SChooling</span> <br />
-            Meets <span className="text-yellow-500 underline decoration-purple-700">Innovation Chigzie</span>
+            Meets <span className="text-yellow-500 underline decoration-purple-700">Innovation</span>
           </h2>
 
           <p className="text-base md:text-lg text-gray-600 font-medium max-w-lg leading-relaxed">
