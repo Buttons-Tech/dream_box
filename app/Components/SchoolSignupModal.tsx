@@ -17,7 +17,7 @@ export default function SchoolSignupModal({ isOpen, onClose }: ModalProps) {
     schoolName: '',
     email: '',
     password: '',
-    role: 'school-admin',
+    role: 'school_admin',
     subject: 'Leggo & Robotics',
     schedule: 'Thursdays'
   });
@@ -35,7 +35,7 @@ export default function SchoolSignupModal({ isOpen, onClose }: ModalProps) {
           fullName: formData.fullName,
           email: formData.email,
           password: formData.password,
-          role: 'school-admin'
+          role: 'school_admin'
         }),
       });
 
