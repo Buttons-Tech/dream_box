@@ -81,6 +81,9 @@ export default function SchoolSignupModal({ isOpen, onClose }: ModalProps) {
           <form onSubmit={handleOnboard} className="space-y-4">
             {step === 1 ? (
               <>
+              <input required type="text" placeholder="FULL NAME (e.g. John Adebayo)" 
+                  className="w-full p-5 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase outline-orange-600 text-gray-900 opacity-100 placeholder:text-gray-500 [appearance:none]"
+                  onChange={(e) => setFormData({...formData, fullName: e.target.value})} />
                 <input required type="text" placeholder="SCHOOL NAME (e.g. Richfield Academy)" 
                   className="w-full p-5 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold uppercase outline-orange-600 text-gray-900 opacity-100 placeholder:text-gray-500 [appearance:none]"
                   onChange={(e) => setFormData({...formData, schoolName: e.target.value})} />
