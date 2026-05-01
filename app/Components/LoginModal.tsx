@@ -13,7 +13,7 @@ export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClo
     setLoading(true);
 
     try {
-      const res = await fetch('${process.env.NEXT_PUBLIC_API_URL}/auth/login', {
+      const res = await fetch('https://dreambox-server.onrender.com/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -30,16 +30,16 @@ export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClo
         // 2. Role-Based Redirection Logic
     switch (data.user.role) {
       case 'tutor':
-        router.push('/tutor/dashboard'); // Tutors for their reports
+        router.push('/tutor'); // Tutors for their reports
         break;
       case 'school-admin':
         router.push('/club');           // Your "Little Treasures" page
         break;
       case 'admin':
-        router.push('/admin/panel');    // Dreambox internal admin
+        router.push('/admin');    // Dreambox internal admin
         break;
       case 'parent':
-        router.push('/parent/portal');  // Student/Parent view
+        router.push('/student');  // Student/Parent view
         break;
       default:
         router.push('/');               // Fallback
