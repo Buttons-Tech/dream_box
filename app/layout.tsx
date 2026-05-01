@@ -19,9 +19,20 @@ const inter = Inter({
   variable: '--font-inter'
 });
 
+
+
 export const metadata = {
-  title: 'Dreambox Creative Tech Academy',
-  description: 'Next-gen learning for future innovators. Join Dreambox Academy to unlock your child’s potential. Enroll now for a brighter tomorrow!',
+  title: "Dreambox Creative Tech Academy'",
+   description: 'Next-gen learning for future innovators. Join Dreambox Academy to unlock your child’s potential. Enroll now for a brighter tomorrow!',
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Dreambox",
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export default function RootLayout({
