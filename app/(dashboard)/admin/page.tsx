@@ -71,7 +71,7 @@ export default function AdminCoordinator() {
         alert("Failed to create link. Check backend logic.");
       }
     } catch (err) {
-      alert("Network error.");
+      alert("Network error." + err);
     } finally {
       setIsAssigning(false);
     }
@@ -154,7 +154,7 @@ export default function AdminCoordinator() {
           <div className="bg-yellow-400 p-8 rounded-[2.5rem] text-purple-950 shadow-lg">
             <h3 className="text-[10px] font-black uppercase opacity-80 mb-2">Notice</h3>
             <p className="text-sm font-bold leading-tight">
-              Assignments made here instantly update the Tutor's dropdown roster.
+              Assignments made here instantly update the Tutor&apos;s dropdown roster.
             </p>
           </div>
         </aside>
