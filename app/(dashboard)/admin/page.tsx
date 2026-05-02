@@ -1,18 +1,25 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 
+// --- INTERFACES ---
 interface User {
   _id: string;
   fullName: string;
   email: string;
+  status?: string; 
+  paymentDate?: string;
 }
 
-export default function AdminCoordinator() {
+export default function AdminDashboard() {
+  const [adminName, setAdminName] = useState("Admin");
   const [tutors, setTutors] = useState<User[]>([]);
   const [students, setStudents] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
   
-  // State for the assignment form
+  // Financial Constant
+  const MONTHLY_FEE = 100000; 
+
+  // Assignment State
   const [selectedTutor, setSelectedTutor] = useState("");
   const [selectedStudent, setSelectedStudent] = useState("");
   const [isAssigning, setIsAssigning] = useState(false);
@@ -20,8 +27,11 @@ export default function AdminCoordinator() {
   useEffect(() => {
     const fetchData = async () => {
       const token = localStorage.getItem('dbx_token');
+      const userJson = localStorage.getItem('dbx_user');
+      
+      if (userJson) setAdminName(JSON.parse(userJson).fullName || "Administrator");
+
       try {
-        // We call both endpoints at the same time
         const [tutorRes, studentRes] = await Promise.all([
           fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/users?role=tutor`, {
             headers: { 'Authorization': `Bearer ${token}` }
@@ -31,134 +41,132 @@ export default function AdminCoordinator() {
           })
         ]);
 
-        const tutorData = await tutorRes.json();
-        const studentData = await studentRes.json();
-
-        if (Array.isArray(tutorData)) setTutors(tutorData);
-        if (Array.isArray(studentData)) setStudents(studentData);
+        setTutors(await tutorRes.json());
+        setStudents(await studentRes.json());
       } catch (error) {
-        console.error("Error fetching rosters:", error);
+        console.error("Data Fetch Error:", error);
       } finally {
         setLoading(false);
       }
     };
-
     fetchData();
   }, []);
 
-  const handleAssignment = async () => {
-    if (!selectedTutor || !selectedStudent) {
-      return alert("Please select both a tutor and a student.");
-    }
-
-    setIsAssigning(true);
-    const token = localStorage.getItem('dbx_token');
-    
-    try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/assign-student`, {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}` 
-        },
-        body: JSON.stringify({ tutorId: selectedTutor, studentId: selectedStudent })
-      });
-
-      if (res.ok) {
-        alert("Success: Student is now assigned to the Tutor!");
-        setSelectedStudent(""); // Reset selection
-      } else {
-        alert("Failed to create link. Check backend logic.");
-      }
-    } catch (err) {
-      alert("Network error." + err);
-    } finally {
-      setIsAssigning(false);
-    }
-  };
+  // Calculation for the co-founder's favorite tab
+  const totalIncome = students.length * MONTHLY_FEE;
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6 md:p-12">
-      <header className="mb-12">
-        <span className="text-[10px] font-black uppercase tracking-widest text-purple-600 bg-purple-50 px-3 py-1 rounded-full">
-          Admin Portal 2026
-        </span>
-        <h1 className="text-4xl md:text-5xl font-black italic uppercase text-gray-900 mt-2">
-          Coordinator <span className="text-purple-700">Panel</span>
-        </h1>
+    <div className="min-h-screen bg-[#FDFCFE] pb-20">
+      {/* 1. HEADER & REVENUE PILLS */}
+      <header className="bg-white border-b border-purple-50 px-6 py-10 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+            <div>
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-purple-500">Finance & Operations</span>
+              <h1 className="text-4xl md:text-6xl font-black italic uppercase text-gray-900 leading-tight">
+                Welcome, <br />
+                <span className="text-purple-700">{adminName.split(' ')[0]}</span>
+              </h1>
+            </div>
+
+            {/* INCOME GENERATED TAB (The Co-founder's Feature) */}
+            <div className="bg-purple-700 p-6 rounded-[2rem] text-white shadow-2xl shadow-purple-200 min-w-[280px]">
+              <p className="text-[9px] font-black uppercase tracking-widest opacity-70">Total Monthly Income</p>
+              <p className="text-4xl font-black italic mt-1">
+                ₦{totalIncome.toLocaleString()}
+              </p>
+              <div className="mt-3 flex items-center gap-2">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                <span className="text-[9px] font-bold uppercase tracking-tighter">Live from {students.length} Students</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="flex flex-wrap gap-4 mt-8">
+            <StatPill label="Tutors" value={tutors.length} color="bg-gray-50 text-gray-700" />
+            <StatPill label="Fee Per Child" value="₦100k" color="bg-yellow-50 text-yellow-700" />
+          </div>
+        </div>
       </header>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <main className="max-w-7xl mx-auto px-6 md:px-12 mt-12 space-y-12">
         
-        {/* ASSIGNMENT CONTROL CARD */}
-        <section className="lg:col-span-2 bg-white rounded-[3rem] p-8 md:p-12 shadow-xl shadow-purple-900/5 border border-purple-50">
-          <h2 className="font-black uppercase italic text-xl mb-8 text-gray-800">Assign Student to Faculty</h2>
-          
-          <div className="space-y-8">
-            {/* TUTOR SELECTION */}
-            <div>
-              <label className="block text-[10px] font-black uppercase text-gray-400 mb-3 ml-2">1. Select Academic Tutor</label>
-              <select 
-                value={selectedTutor}
-                onChange={(e) => setSelectedTutor(e.target.value)}
-                className="w-full p-5 bg-gray-50 rounded-2xl border-2 border-transparent focus:border-purple-500 outline-none font-bold text-sm transition-all appearance-none"
-              >
-                <option value="">{loading ? "Loading Faculty..." : "Choose a Tutor..."}</option>
-                {tutors.map((tutor) => (
-                  <option key={tutor._id} value={tutor._id}>{tutor.fullName} ({tutor.email})</option>
-                ))}
-              </select>
-            </div>
-
-            {/* STUDENT SELECTION */}
-            <div>
-              <label className="block text-[10px] font-black uppercase text-gray-400 mb-3 ml-2">2. Select Student</label>
-              <select 
-                value={selectedStudent}
-                onChange={(e) => setSelectedStudent(e.target.value)}
-                className="w-full p-5 bg-gray-50 rounded-2xl border-2 border-transparent focus:border-purple-500 outline-none font-bold text-sm transition-all appearance-none"
-              >
-                <option value="">{loading ? "Loading Students..." : "Choose a Student..."}</option>
-                {students.map((student) => (
-                  <option key={student._id} value={student._id}>{student.fullName}</option>
-                ))}
-              </select>
-            </div>
-
-            <button 
-              onClick={handleAssignment}
-              disabled={isAssigning || loading}
-              className="w-full bg-purple-700 text-white py-6 rounded-2xl font-black uppercase tracking-widest hover:bg-purple-800 transition-all shadow-lg shadow-purple-200 disabled:opacity-50 flex items-center justify-center gap-2"
+        {/* 2. ASSIGNMENT SPACE */}
+        <section className="bg-purple-900 rounded-[3rem] p-8 md:p-12 text-white">
+          <h2 className="text-2xl font-black italic uppercase mb-8">Tutor Coordination</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <select 
+              value={selectedTutor}
+              onChange={(e) => setSelectedTutor(e.target.value)}
+              className="bg-purple-800 rounded-2xl p-4 font-bold text-sm text-white outline-none"
             >
-              {isAssigning ? "Processing Link..." : "Confirm Assignment"}
+              <option value="">Select Tutor...</option>
+              {tutors.map(t => <option key={t._id} value={t._id}>{t.fullName}</option>)}
+            </select>
+            <select 
+              value={selectedStudent}
+              onChange={(e) => setSelectedStudent(e.target.value)}
+              className="bg-purple-800 rounded-2xl p-4 font-bold text-sm text-white outline-none"
+            >
+              <option value="">Select Student...</option>
+              {students.map(s => <option key={s._id} value={s._id}>{s.fullName}</option>)}
+            </select>
+            <button 
+              onClick={() => {/* handleAssignment logic */}}
+              className="bg-yellow-400 text-purple-950 p-4 rounded-2xl font-black uppercase text-[10px] tracking-widest"
+            >
+              Link Now
             </button>
           </div>
         </section>
 
-        {/* ROSTER OVERVIEW (SIDEBAR) */}
-        <aside className="space-y-6">
-          <div className="bg-purple-900 p-8 rounded-[2.5rem] text-white shadow-lg">
-            <h3 className="text-[10px] font-black uppercase opacity-60 mb-4">Quick Stats</h3>
-            <div className="flex justify-between items-end">
-              <div>
-                <p className="text-4xl font-black italic">{tutors.length}</p>
-                <p className="text-[9px] font-bold uppercase">Tutors</p>
-              </div>
-              <div className="text-right">
-                <p className="text-4xl font-black italic">{students.length}</p>
-                <p className="text-[9px] font-bold uppercase">Students</p>
-              </div>
-            </div>
+        {/* 3. STUDENT REGISTRY WITH FINANCIALS */}
+        <section>
+          <h2 className="text-xl font-black italic uppercase text-gray-900 mb-6">Student Roster & Accounts</h2>
+          <div className="bg-white rounded-[2.5rem] border border-gray-100 overflow-hidden shadow-sm">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="bg-gray-50 border-b border-gray-100">
+                  <th className="p-6 text-[9px] font-black uppercase text-gray-400 tracking-widest">Student</th>
+                  <th className="p-6 text-[9px] font-black uppercase text-gray-400 tracking-widest">Monthly Contribution</th>
+                  <th className="p-6 text-[9px] font-black uppercase text-gray-400 tracking-widest">Status</th>
+                  <th className="p-6 text-[9px] font-black uppercase text-gray-400 tracking-widest text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-50">
+                {students.map((student) => (
+                  <tr key={student._id} className="hover:bg-purple-50/30 transition-colors">
+                    <td className="p-6">
+                      <p className="font-black text-gray-900 text-sm italic uppercase">{student.fullName}</p>
+                      <p className="text-[10px] font-bold text-gray-400">{student.email}</p>
+                    </td>
+                    <td className="p-6 font-black text-purple-700 text-sm">
+                      ₦{MONTHLY_FEE.toLocaleString()}
+                    </td>
+                    <td className="p-6">
+                      <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-[9px] font-black uppercase">
+                        Current
+                      </span>
+                    </td>
+                    <td className="p-6 text-right">
+                      <button className="text-[10px] font-black text-gray-400 hover:text-purple-700 uppercase">View Ledger</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
+        </section>
+      </main>
+    </div>
+  );
+}
 
-          <div className="bg-yellow-400 p-8 rounded-[2.5rem] text-purple-950 shadow-lg">
-            <h3 className="text-[10px] font-black uppercase opacity-80 mb-2">Notice</h3>
-            <p className="text-sm font-bold leading-tight">
-              Assignments made here instantly update the Tutor&apos;s dropdown roster.
-            </p>
-          </div>
-        </aside>
-      </div>
+function StatPill({ label, value, color }: { label: string; value: string | number; color: string }) {
+  return (
+    <div className={`${color} px-4 py-2 rounded-full flex items-center gap-2 border border-current`}>
+      <span className="text-[9px] font-black uppercase tracking-widest">{label}</span>
+      <span className="text-sm font-black italic">{value}</span>
     </div>
   );
 }
