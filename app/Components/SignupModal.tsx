@@ -15,6 +15,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     fullName: '',
     parentEmail: '',
+    password: '',
     gender: 'Male',
     age: '',
     currentClass: '',
@@ -116,11 +117,28 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
                 <label htmlFor="parentEmail" className="text-[10px] font-bold text-gray-400 uppercase ml-2">Parent Email</label>
                 <input id="parentEmail" name="parentEmail" required type="email" placeholder="Email" className="w-full p-4 bg-gray-50 border-2 border-gray-100 rounded-2xl outline-none focus:border-purple-500" value={formData.parentEmail} onChange={(e) => setFormData({...formData, parentEmail: e.target.value})} />
               </div>
+              
+              {/* Mew password field  */}
+              <div className="space-y-1">
+      <label htmlFor="password" className="text-[10px] font-bold text-gray-400 uppercase ml-2">Create Password</label>
+      <input 
+        id="password" 
+        name="password" 
+        required 
+        type="password" 
+        placeholder="••••••••" 
+        className="w-full p-4 bg-gray-50 border-2 border-gray-100 rounded-2xl outline-none focus:border-purple-500 font-bold" 
+        value={formData.password} 
+        onChange={(e) => setFormData({...formData, password: e.target.value})} 
+      />
+    </div>
+
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1">
                   <label htmlFor="gender" className="text-[10px] font-bold text-gray-400 uppercase ml-2">Gender</label>
                   <select id="gender" name="gender" className="w-full p-4 bg-gray-50 border-2 border-gray-100 rounded-2xl" value={formData.gender} onChange={(e) => setFormData({...formData, gender: e.target.value})}><option value="Male">Male</option><option value="Female">Female</option></select>
                 </div>
+                
                 <div className="space-y-1">
                   <label htmlFor="age" className="text-[10px] font-bold text-gray-400 uppercase ml-2">Age</label>
                   <input id="age" name="age" required type="number" placeholder="Age" className="w-full p-4 bg-gray-50 border-2 border-gray-100 rounded-2xl" value={formData.age} onChange={(e) => setFormData({...formData, age: e.target.value})} />
