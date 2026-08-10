@@ -36,7 +36,7 @@ export default function RobotBuildersClub() {
           <span>🤖</span> DREAMBOX <span className="text-white font-normal text-base">Robotics</span>
         </div>
         <div className="flex items-center gap-4">
-          <span className="hidden md:block text-slate-400 font-medium">"Stars are meant to shine"</span>
+          <span className="hidden md:block text-slate-400 font-medium">`{"Stars are meant to shine"}`</span>
           <a href="#register" className="bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-5 py-2.5 rounded-full transition-all shadow-lg shadow-amber-400/20">
             Enroll Now
           </a>
@@ -61,10 +61,10 @@ export default function RobotBuildersClub() {
             Ages 3 – 15 • Hands-On STEM
           </span>
           <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight">
-            "Stars are meant <span className="text-amber-400">to shine"</span>
+            {"Stars are meant <span className=\"text-amber-400\">to shine</span>"}
           </h1>
           <p className="text-slate-200 text-lg md:text-xl mt-6 max-w-2xl bg-slate-950/50 p-4 rounded-xl backdrop-blur-sm">
-            Launch your child's future in engineering. From cardboard rockets to smart Arduino cars and Python coding. Join Dreambox Center's 8-week robotics adventure!
+            {`Launch your child's future in engineering. From cardboard rockets to smart Arduino cars and Python coding. Join Dreambox Center's 8-week robotics adventure!`}
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <a href="#pricing" className="bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-8 py-4 rounded-full text-lg transition-all text-center">
@@ -126,7 +126,7 @@ export default function RobotBuildersClub() {
               />
             </div>
             <h3 className="text-3xl font-bold text-white text-center">3. Galaxy Quest: Programming your Starship</h3>
-            <p className="text-slate-300 text-lg text-center">We bridge coding and design! They'll design a digital spaceship simulation in Scratch, then program a simple physical interface (like buttons and LEDs) to control it, simulating a bridge of a starship.</p>
+            <p className="text-slate-300 text-lg text-center">{`We bridge coding and design! They'll design a digital spaceship simulation in Scratch, then program a simple physical interface (like buttons and LEDs) to control it, simulating a bridge of a starship.`}</p>
           </div>
         </div>
       </section>
@@ -141,7 +141,7 @@ export default function RobotBuildersClub() {
             <div>
               <span className="text-xs uppercase text-slate-400 font-bold tracking-wider">Most Popular</span>
               <h3 className="text-2xl font-bold text-white mt-2">At-School Club</h3>
-              <p className="text-slate-400 text-sm mt-2">Held inside your child's school computer lab after classes.</p>
+              <p className="text-slate-400 text-sm mt-2">{`Held inside your child's school computer lab after classes.`}</p>
               <div className="my-6">
                 <span className="text-4xl font-extrabold text-amber-400">₦10,000</span>
                 <span className="text-slate-400 text-sm"> / 8-Week Term</span>
@@ -234,7 +234,7 @@ export default function RobotBuildersClub() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-1">Child's Name</label>
+                <label className="block text-sm font-medium text-slate-300 mb-1">{`Child's Name`}</label>
                 <input 
                   required 
                   type="text" 
@@ -244,7 +244,7 @@ export default function RobotBuildersClub() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-1">Child's Age / Class</label>
+                <label className="block text-sm font-medium text-slate-300 mb-1">{`Child's Age / Class`}</label>
                 <input 
                 required 
                 type="text" 
@@ -265,7 +265,7 @@ export default function RobotBuildersClub() {
       {/* Footer */}
       <footer className="text-center px-6 py-10 border-t border-slate-800 bg-slate-950">
         <p className="text-slate-500">© {new Date().getFullYear()} Dreambox Robotics Center. All rights reserved.</p>
-        <p className="text-sm text-slate-600 mt-2">"Stars are meant to shine."</p>
+        <p className="text-sm text-slate-600 mt-2">{`"Stars are meant to shine."`}</p>
       </footer>
     </div>
   );
