@@ -48,7 +48,7 @@ export default function RobotBuildersClub() {
         {/* Placeholder: Main Hero Image */}
         {/* RECOMMENDED IMAGE: A dynamic photo of 3-4 smiling Nigerian children (boys and girls) in a modern lab, looking up at a detailed cardboard/LEGO model of a space rocket they just built. Maybe one child is holding a 'launch controller' (an Arduino). The background is a classroom with posters of rockets and stars. */}
         <Image 
-          src="/images/rocket.jpg" // REPLACE THIS with your actual image path in the /public/images folder
+          src="/images/rocket2.png" // REPLACE THIS with your actual image path in the /public/images folder
           alt="Smiling Nigerian children in a robotics lab with a large cardboard rocket model they built."
           fill
           priority
