@@ -61,7 +61,7 @@ export default function RobotBuildersClub() {
             Ages 3 – 15 • Hands-On STEM
           </span>
           <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight">
-            {"Stars are meant <span className=\"text-amber-400\">to shine</span>"}
+            {`"Stars are meant `}<span className="text-amber-400">to shine</span>{`"`}
           </h1>
           <p className="text-slate-200 text-lg md:text-xl mt-6 max-w-2xl bg-slate-950/50 p-4 rounded-xl backdrop-blur-sm">
             {`Launch your child's future in engineering. From cardboard rockets to smart Arduino cars and Python coding. Join Dreambox Center's 8-week robotics adventure!`}
