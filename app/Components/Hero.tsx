@@ -1,105 +1,56 @@
-"use client";
-import Image from "next/image";
-// import { useRouter } from "next/navigation";
-import { useState } from "react";
-import SchoolSignupModal from '@/app/Components/SchoolSignupModal';
-
-
-interface HeroProps {
-  onSignUpClick: () => void;
-  onSchoolSignUpClick: () => void;
-
-}
-
-const Hero = ({ onSignUpClick, onSchoolSignUpClick }: HeroProps) => {
-  // const router = useRouter(); 
-    const [isSchoolModalOpen, setIsSchoolModalOpen] = useState(false);
-
-
-
+export default function Hero({ onGetStarted }: { onGetStarted: () => void }) {
   return (
-    <section className="relative min-h-screen flex items-center pt-10 lg:pt-20 overflow-hidden bg-white">
-      {/* Decorative Brand Blobs */}
-      <div className="absolute top-20 l eft-10 w-32 h-32 bg-yellow-400/20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-10 right-10 w-64 h-64 bg-purple-700/10 rounded-full blur-3xl"></div>
+    <section className="relative overflow-hidden bg-gradient-to-b from-amber-50 to-white py-16 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left Text Content */}
+          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div className="inline-flex items-center space-x-2 bg-amber-200/60 border-2 border-amber-300 px-4 py-2 rounded-full">
+              <span className="text-xl">🌟</span>
+              <span className="text-xs sm:text-sm font-black text-amber-900 tracking-wide uppercase">Egan Center, Lagos • Ages 3+</span>
+            </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <h1 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-none">
+              Where Kids <span className="text-amber-500 underline decoration-wavy decoration-amber-300">Build Their Dreams</span> Through STEM!
+            </h1>
 
-        {/* LEFT COLUMN: The "Whole Child" Hook */}
-        <div className="text-left space-y-6 md:space-y-8 order-2 lg:order-1">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full border border-purple-100">
-            <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-purple-700">• Home Schooling • K-12 • IGCSE/GCSE Prep • Tech Academy</span>
-          </div> 
+            <p className="text-lg sm:text-xl font-medium text-slate-600 max-w-2xl mx-auto lg:mx-0">
+              Welcome to Dreambox Club! Spark your child's imagination with hands-on Robotics, Python Programming, AI, and Mathematics designed for young innovators.
+            </p>
 
-          <h2 className="text-4xl md:text-7xl font-black text-gray-900 leading-[0.95] tracking-tighter uppercase italic">
-            Where <span className="text-purple-700">Online SChooling</span> <br />
-            Meets <span className="text-yellow-500 underline decoration-purple-700">Innovation</span>
-          </h2>
-
-          <p className="text-base md:text-lg text-gray-600 font-medium max-w-lg leading-relaxed">
-            From first words to first lines of code. We nurture early years development, mastery in English, and global tech skills in one virtual laboratory for the next generation of leaders.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <button 
-              onClick={onSignUpClick}
-              className="bg-purple-700 text-white px-8 py-4 md:py-5 rounded-2xl text-xs font-black uppercase tracking-widest hover:bg-purple-800 shadow-xl shadow-purple-200 transition-all"
-            >
-              Enroll My Child
-            </button>
-            <button 
-              // onClick={() => router?.push('/contact-school')}
-              onClick={onSchoolSignUpClick}
-              className="bg-white border-2 border-purple-700 text-purple-700 px-8 py-4 md:py-5 rounded-2xl text-xs font-black uppercase tracking-widest hover:bg-purple-50 transition-all"
-            >
-              For Schools
-            </button>
-            <SchoolSignupModal
-        isOpen={isSchoolModalOpen} 
-        onClose={() => setIsSchoolModalOpen(false)} 
-      />
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+              <button 
+                onClick={onGetStarted}
+                className="w-full sm:w-auto bg-amber-400 hover:bg-amber-500 text-amber-950 font-black px-8 py-4 rounded-2xl shadow-[0_6px_0_0_#d97706] active:translate-y-1 active:shadow-none transition-all text-lg"
+              >
+                Enroll Your Child Now 🎒
+              </button>
+              <a 
+                href="#courses"
+                className="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-800 border-2 border-slate-200 font-bold px-8 py-4 rounded-2xl shadow-sm text-center transition-all"
+              >
+                Explore Courses 📚
+              </a>
+            </div>
           </div>
-        </div>
 
-        {/* RIGHT COLUMN: The Visual (Visible on ALL screens now) */}
-        <div className="relative group order-1 lg:order-2 mt-12 lg:mt-0">
-            {/* Main Image Container - Adjusted size for mobile */}
-            <div className="relative z-10 rounded-[2.5rem] md:rounded-[4rem] overflow-hidden border-4 md:border-8 border-white shadow-2xl rotate-1 lg:rotate-2 hover:rotate-0 transition-all duration-500">
-                <Image 
-                    src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80" 
-                    alt="Child reading and learning" 
-                    width={600}
-                    height={700}
-                    className="object-cover h-[350px] md:h-[500px] w-full"
-                />
-                {/* Visual Overlay to warm up the image */}
-                <div className="absolute inset-0 bg-purple-900/10 mix-blend-multiply"></div>
+          {/* Right Cartoon Visual Box */}
+          <div className="lg:col-span-5 flex justify-center">
+            <div className="relative w-full max-w-md aspect-square bg-amber-300 rounded-[40px] border-4 border-amber-400 shadow-[0_12px_0_0_#f59e0b] p-6 flex flex-col items-center justify-center text-center">
+              <div className="absolute -top-6 -right-6 bg-white border-4 border-amber-300 px-4 py-2 rounded-2xl font-black text-slate-800 shadow-md rotate-6">
+                🤖 100% Hands-On!
+              </div>
+              <div className="text-8xl mb-4 animate-bounce">🚀</div>
+              <h3 className="text-2xl font-black text-amber-950">Future Innovators Hub</h3>
+              <p className="text-amber-900 font-semibold text-sm mt-2">
+                Equipping primary & secondary students with next-gen technical superpowers right here in Egan, Lagos.
+              </p>
             </div>
-            
-            {/* BALANCED BADGES: Tech vs. Early Years */}
-            <div className="absolute -top-4 -left-4 z-20 bg-yellow-400 p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-xl -rotate-6">
-                <p className="text-xl md:text-2xl">📖</p>
-                <p className="text-[9px] md:text-[10px] font-black uppercase text-purple-950">Online Schooling</p>
-            </div>
-            
-            <div className="absolute bottom-10 -right-4 z-20 bg-white p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-xl rotate-6 border border-purple-100">
-                <p className="text-xl md:text-2xl">🎨</p>
-                <p className="text-[9px] md:text-[10px] font-black uppercase text-purple-700">Early Years</p>
-            </div>
+          </div>
 
-            <div className="absolute top-12 -left-8 z-30 bg-purple-700 p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-xl -rotate-12 lg:block hidden">
-                <p className="text-xl md:text-2xl">🤖</p>
-                <p className="text-[9px] md:text-[10px] font-black uppercase text-white">TECH Academy</p>
-            </div>
-              <div className="absolute bottom-23 -right-8 z-30 bg-purple-700 p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-xl -rotate-12 lg:block hidden">
-                <p className="text-xl md:text-2xl">📖</p>
-                <p className="text-[9px] md:text-[10px] font-black uppercase text-white">Tutoring</p>
-            </div>
         </div>
-      </div>  
+      </div>
     </section>
   );
-};
-
-export default Hero;
+}
