@@ -69,7 +69,7 @@ export default function OnboardingModal({ isOpen, initialMode = 'signup', select
               Log In to Portal 🚀
             </button>
             <p className="text-center text-sm text-slate-500 pt-2 font-medium">
-              Don't have an account? <button onClick={() => setMode('signup')} className="text-amber-600 font-bold underline">Sign up</button>
+              Don&apos;t have an account? <button onClick={() => setMode('signup')} className="text-amber-600 font-bold underline">Sign up</button>
             </p>
           </div>
         ) : mode === 'payment' ? (
@@ -93,12 +93,12 @@ export default function OnboardingModal({ isOpen, initialMode = 'signup', select
         ) : (
           <div className="space-y-4">
             <div>
-              <label className="block text-xs font-black text-slate-600 uppercase mb-1">Child's Full Name</label>
+              <label className="block text-xs font-black text-slate-600 uppercase mb-1">Child&apos;s Full Name</label>
               <input type="text" className="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 font-medium outline-none focus:border-amber-500" placeholder="e.g. David Junior" />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-xs font-black text-slate-600 uppercase mb-1">Child's Age</label>
+                <label className="block text-xs font-black text-slate-600 uppercase mb-1">Child&apos;s Age</label>
                 <input type="number" className="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 font-medium outline-none focus:border-amber-500" placeholder="e.g. 7" />
               </div>
               <div>
@@ -107,7 +107,7 @@ export default function OnboardingModal({ isOpen, initialMode = 'signup', select
               </div>
             </div>
             <div>
-              <label className="block text-xs font-black text-slate-600 uppercase mb-1">Parent's Email & Password</label>
+              <label className="block text-xs font-black text-slate-600 uppercase mb-1">Parent&apos;s Email & Password</label>
               <input type="email" className="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 font-medium outline-none focus:border-amber-500 mb-2" placeholder="parent@email.com" />
               <input type="password" className="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 font-medium outline-none focus:border-amber-500" placeholder="Create your password" />
             </div>
